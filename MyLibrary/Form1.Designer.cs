@@ -1,7 +1,7 @@
 ﻿
 namespace MyLibrary
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -29,13 +29,201 @@ namespace MyLibrary
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pnlNavigation = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnWanted = new System.Windows.Forms.Button();
+            this.btnBorrowed = new System.Windows.Forms.Button();
+            this.btnMain = new System.Windows.Forms.Button();
+            this.userPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pnlFormLoader = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlNavigation.SuspendLayout();
+            this.userPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlNavigation
+            // 
+            this.pnlNavigation.BackColor = System.Drawing.Color.DarkOrchid;
+            this.pnlNavigation.Controls.Add(this.btnSettings);
+            this.pnlNavigation.Controls.Add(this.btnWanted);
+            this.pnlNavigation.Controls.Add(this.btnBorrowed);
+            this.pnlNavigation.Controls.Add(this.btnMain);
+            this.pnlNavigation.Controls.Add(this.userPanel);
+            this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlNavigation.Location = new System.Drawing.Point(0, 0);
+            this.pnlNavigation.Name = "pnlNavigation";
+            this.pnlNavigation.Size = new System.Drawing.Size(186, 577);
+            this.pnlNavigation.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSettings.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnSettings.Location = new System.Drawing.Point(0, 517);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(186, 60);
+            this.btnSettings.TabIndex = 5;
+            this.btnSettings.Text = "Ustawienia";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.Enter += new System.EventHandler(this.btnSettings_Enter);
+            this.btnSettings.Leave += new System.EventHandler(this.btnSettings_Leave);
+            // 
+            // btnWanted
+            // 
+            this.btnWanted.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWanted.FlatAppearance.BorderSize = 0;
+            this.btnWanted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWanted.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWanted.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnWanted.Location = new System.Drawing.Point(0, 264);
+            this.btnWanted.Name = "btnWanted";
+            this.btnWanted.Size = new System.Drawing.Size(186, 60);
+            this.btnWanted.TabIndex = 4;
+            this.btnWanted.Text = "Do kupienia";
+            this.btnWanted.UseVisualStyleBackColor = true;
+            this.btnWanted.Click += new System.EventHandler(this.btnWanted_Click);
+            this.btnWanted.Enter += new System.EventHandler(this.btnWanted_Enter);
+            this.btnWanted.Leave += new System.EventHandler(this.btnWanted_Leave);
+            // 
+            // btnBorrowed
+            // 
+            this.btnBorrowed.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBorrowed.FlatAppearance.BorderSize = 0;
+            this.btnBorrowed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBorrowed.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnBorrowed.Location = new System.Drawing.Point(0, 204);
+            this.btnBorrowed.Name = "btnBorrowed";
+            this.btnBorrowed.Size = new System.Drawing.Size(186, 60);
+            this.btnBorrowed.TabIndex = 3;
+            this.btnBorrowed.Text = "Pożyczone";
+            this.btnBorrowed.UseVisualStyleBackColor = true;
+            this.btnBorrowed.Click += new System.EventHandler(this.btnBorrowed_Click);
+            this.btnBorrowed.Enter += new System.EventHandler(this.btnBorrowed_Enter);
+            this.btnBorrowed.Leave += new System.EventHandler(this.btnBorrowed_Leave);
+            // 
+            // btnMain
+            // 
+            this.btnMain.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMain.FlatAppearance.BorderSize = 0;
+            this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMain.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnMain.Location = new System.Drawing.Point(0, 144);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.Size = new System.Drawing.Size(186, 60);
+            this.btnMain.TabIndex = 2;
+            this.btnMain.Text = "Moje książki";
+            this.btnMain.UseVisualStyleBackColor = false;
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            this.btnMain.Enter += new System.EventHandler(this.btnMain_Enter);
+            this.btnMain.Leave += new System.EventHandler(this.btnMain_Leave);
+            // 
+            // userPanel
+            // 
+            this.userPanel.Controls.Add(this.label1);
+            this.userPanel.Controls.Add(this.pictureBox1);
+            this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userPanel.Location = new System.Drawing.Point(0, 0);
+            this.userPanel.Name = "userPanel";
+            this.userPanel.Size = new System.Drawing.Size(186, 144);
+            this.userPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(39, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(43, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(914, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pnlFormLoader
+            // 
+            this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFormLoader.Location = new System.Drawing.Point(186, 120);
+            this.pnlFormLoader.Name = "pnlFormLoader";
+            this.pnlFormLoader.Size = new System.Drawing.Size(765, 457);
+            this.pnlFormLoader.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTitle.Location = new System.Drawing.Point(214, 39);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(215, 39);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Moje książki";
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.pnlFormLoader);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pnlNavigation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.pnlNavigation.ResumeLayout(false);
+            this.userPanel.ResumeLayout(false);
+            this.userPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlNavigation;
+        private System.Windows.Forms.Panel userPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnWanted;
+        private System.Windows.Forms.Button btnBorrowed;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel pnlFormLoader;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
 
