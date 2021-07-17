@@ -24,10 +24,7 @@ namespace MyLibrary.Forms
 
         private void LoadBooksList()
         {
-            //TODO - real data here
-            books.Add(new BookModel { Title = "Pierwszy tytuł.", Borrowed = false });
-            books.Add(new BookModel { Title = "Drugi tytuł.", Borrowed = false });
-            books.Add(new BookModel { Title = "Trzeci tytuł.", Borrowed = false });
+            books = SqlDataAccess.LoadBooks();
 
             WireUpBooksList();
         }
@@ -50,9 +47,6 @@ namespace MyLibrary.Forms
 
             book.Title = titleText.Text;
             book.Borrowed = borrowedBox.Checked;
-
-            books.Add(book);
-            WireUpBooksList();
 
             titleText.Text = "";
             borrowedBox.Checked = false;
