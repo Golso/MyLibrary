@@ -70,9 +70,9 @@ namespace MyLibrary.Forms
             this.borrowedBox.Location = new System.Drawing.Point(25, 112);
             this.borrowedBox.Name = "borrowedBox";
             this.borrowedBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.borrowedBox.Size = new System.Drawing.Size(90, 21);
+            this.borrowedBox.Size = new System.Drawing.Size(99, 21);
             this.borrowedBox.TabIndex = 5;
-            this.borrowedBox.Text = "Borrowed";
+            this.borrowedBox.Text = "Pożyczone";
             this.borrowedBox.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -87,6 +87,8 @@ namespace MyLibrary.Forms
             // 
             // dataGridViewMain
             // 
+            this.dataGridViewMain.AllowUserToAddRows = false;
+            this.dataGridViewMain.AllowUserToDeleteRows = false;
             this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMain.Location = new System.Drawing.Point(298, 68);
             this.dataGridViewMain.Name = "dataGridViewMain";
@@ -95,6 +97,7 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.RowTemplate.Height = 24;
             this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewMain.TabIndex = 7;
+            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
             // 
             // MyBooksForm
             // 

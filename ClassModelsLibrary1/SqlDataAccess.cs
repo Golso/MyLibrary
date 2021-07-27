@@ -26,7 +26,15 @@ namespace ClassModelsLibrary1
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Book (Title, Borrowed) values (@Title, @Borrowed)", book);
+                cnn.Execute("insert into Book (Tytuł, Pożyczone) values (@Tytuł, @Pożyczone)", book);
+            }
+        }
+
+        public static void DeleteBook(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("DELETE FROM Book WHERE ID = " + id);
             }
         }
 
@@ -34,7 +42,7 @@ namespace ClassModelsLibrary1
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select Title, Borrowed from Book", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select * from Book", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");

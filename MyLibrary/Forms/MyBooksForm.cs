@@ -14,7 +14,8 @@ namespace MyLibrary.Forms
 {
     public partial class MyBooksForm : Form
     {
-        List<BookModel> books = new List<BookModel>(); 
+        int currentID;
+        //List<BookModel> books = new List<BookModel>(); 
         public MyBooksForm()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace MyLibrary.Forms
 
             DataSet ds = SqlDataAccess.LoadBooks();
 
+            dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];
 
         }
@@ -47,8 +49,15 @@ namespace MyLibrary.Forms
             {
                 BookModel book = new BookModel();
 
-                book.Title = titleText.Text;
-                book.Borrowed = borrowedBox.Checked;
+                book.Tytuł = titleText.Text;
+                if(borrowedBox.Checked)
+                {
+                    book.Pożyczone = "Tak";
+                }
+                else
+                {
+                    book.Pożyczone = "Nie";
+                }
 
                 SqlDataAccess.SaveBook(book);
 
@@ -61,7 +70,32 @@ namespace MyLibrary.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                SqlDataAccess.DeleteBook(currentID);
+            }
+            catch (Exception exemp)
+            {
+                MessageBox.Show(exemp.Message);
+            }
+
+            LoadBooksList();
+        }
+
+        private void dataGridViewMain_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewMain.Rows[e.RowIndex];
+
+                currentID = Convert.ToInt32(row.Cells[0].Value);
+                titleText.Text = row.Cells[1].Value.ToString();
+                if (row.Cells[2].Value.ToString() == "Tak")
+                    borrowedBox.Checked = true;   
+                else
+                    borrowedBox.Checked = false;
+             
+            }
         }
     }
 }

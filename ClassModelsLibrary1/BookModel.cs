@@ -9,7 +9,7 @@ namespace ClassModelsLibrary1
     public class BookModel
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public bool Borrowed { get; set; }
+        public string Tytuł { get; set; }
+        public string Pożyczone { get; set; }
     }
 }
