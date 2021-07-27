@@ -14,7 +14,7 @@ namespace MyLibrary.Forms
 {
     public partial class MyBooksForm : Form
     {
-        int currentID;
+        int currentID = 0;
         //List<BookModel> books = new List<BookModel>(); 
         public MyBooksForm()
         {
@@ -73,6 +73,10 @@ namespace MyLibrary.Forms
             try
             {
                 SqlDataAccess.DeleteBook(currentID);
+
+                currentID = 0;
+                titleText.Text = "";
+                borrowedBox.Checked = false;
             }
             catch (Exception exemp)
             {
@@ -94,8 +98,20 @@ namespace MyLibrary.Forms
                     borrowedBox.Checked = true;   
                 else
                     borrowedBox.Checked = false;
-             
             }
+        }
+
+        private void btnUpdateBook_Click(object sender, EventArgs e)
+        {
+            if (titleText.Text != "" && currentID != 0)
+            {
+                SqlDataAccess.UpdateBook(currentID, titleText.Text, borrowedBox.Checked);
+
+                currentID = 0;
+                titleText.Text = "";
+                borrowedBox.Checked = false;
+            }
+            LoadBooksList();
         }
     }
 }

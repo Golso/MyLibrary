@@ -35,12 +35,13 @@ namespace MyLibrary.Forms
             this.borrowedBox = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.btnUpdateBook = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(25, 182);
+            this.btnAddBook.Location = new System.Drawing.Point(25, 139);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(257, 69);
             this.btnAddBook.TabIndex = 1;
@@ -99,12 +100,23 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.TabIndex = 7;
             this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
             // 
+            // btnUpdateBook
+            // 
+            this.btnUpdateBook.Location = new System.Drawing.Point(25, 214);
+            this.btnUpdateBook.Name = "btnUpdateBook";
+            this.btnUpdateBook.Size = new System.Drawing.Size(257, 75);
+            this.btnUpdateBook.TabIndex = 8;
+            this.btnUpdateBook.Text = "Edytuj";
+            this.btnUpdateBook.UseVisualStyleBackColor = true;
+            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            // 
             // MyBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateBook);
             this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.borrowedBox);
@@ -127,5 +139,6 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.CheckBox borrowedBox;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.Button btnUpdateBook;
     }
 }

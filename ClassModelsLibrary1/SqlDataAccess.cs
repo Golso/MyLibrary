@@ -38,6 +38,15 @@ namespace ClassModelsLibrary1
             }
         }
 
+        public static void UpdateBook(int id, string title, bool borrowed)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string borrow = borrowed ? "Tak" : "Nie";
+                cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Pożyczone = '{borrow}' WHERE ID = {id}");
+            }
+        }
+
         public static DataSet LoadBooks()
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
