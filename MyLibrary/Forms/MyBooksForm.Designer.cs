@@ -33,8 +33,9 @@ namespace MyLibrary.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.titleText = new System.Windows.Forms.TextBox();
             this.borrowedBox = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listOfBooksBox = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddBook
@@ -74,24 +75,26 @@ namespace MyLibrary.Forms
             this.borrowedBox.Text = "Borrowed";
             this.borrowedBox.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(25, 295);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 74);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Odśwież";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDelete.Location = new System.Drawing.Point(25, 295);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(257, 74);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Usuń";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // listOfBooksBox
+            // dataGridViewMain
             // 
-            this.listOfBooksBox.FormattingEnabled = true;
-            this.listOfBooksBox.ItemHeight = 16;
-            this.listOfBooksBox.Location = new System.Drawing.Point(409, 68);
-            this.listOfBooksBox.Name = "listOfBooksBox";
-            this.listOfBooksBox.Size = new System.Drawing.Size(260, 308);
-            this.listOfBooksBox.TabIndex = 7;
+            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMain.Location = new System.Drawing.Point(298, 68);
+            this.dataGridViewMain.Name = "dataGridViewMain";
+            this.dataGridViewMain.ReadOnly = true;
+            this.dataGridViewMain.RowHeadersWidth = 51;
+            this.dataGridViewMain.RowTemplate.Height = 24;
+            this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
+            this.dataGridViewMain.TabIndex = 7;
             // 
             // MyBooksForm
             // 
@@ -99,8 +102,8 @@ namespace MyLibrary.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listOfBooksBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridViewMain);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.borrowedBox);
             this.Controls.Add(this.titleText);
             this.Controls.Add(this.label1);
@@ -108,6 +111,7 @@ namespace MyLibrary.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MyBooksForm";
             this.Text = "MyBooksForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +122,7 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox titleText;
         private System.Windows.Forms.CheckBox borrowedBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listOfBooksBox;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView dataGridViewMain;
     }
 }

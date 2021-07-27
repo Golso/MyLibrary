@@ -24,32 +24,44 @@ namespace MyLibrary.Forms
 
         private void LoadBooksList()
         {
-            books = SqlDataAccess.LoadBooks();
+            //books = SqlDataAccess.LoadBooks();
 
             WireUpBooksList();
         }
 
         private void WireUpBooksList()
         {
-            listOfBooksBox.DataSource = null;
-            listOfBooksBox.DataSource = books;
-            listOfBooksBox.DisplayMember = "Title";
-        }
+            //listOfBooksBox.DataSource = null;
+            //listOfBooksBox.DataSource = books;
+            //listOfBooksBox.DisplayMember = "Title";
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadBooksList();
+            DataSet ds = SqlDataAccess.LoadBooks();
+
+            dataGridViewMain.DataSource = ds.Tables[0];
+
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            BookModel book = new BookModel();
+            if (titleText.Text != "")
+            {
+                BookModel book = new BookModel();
 
-            book.Title = titleText.Text;
-            book.Borrowed = borrowedBox.Checked;
+                book.Title = titleText.Text;
+                book.Borrowed = borrowedBox.Checked;
 
-            titleText.Text = "";
-            borrowedBox.Checked = false;
+                SqlDataAccess.SaveBook(book);
+
+                titleText.Text = "";
+                borrowedBox.Checked = false;
+            }
+
+            LoadBooksList();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
