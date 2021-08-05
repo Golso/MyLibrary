@@ -15,7 +15,6 @@ namespace MyLibrary.Forms
     public partial class MyBooksForm : Form
     {
         int currentID = 0;
-        //List<BookModel> books = new List<BookModel>(); 
         public MyBooksForm()
         {
             InitializeComponent();
@@ -25,17 +24,11 @@ namespace MyLibrary.Forms
 
         private void LoadBooksList()
         {
-            //books = SqlDataAccess.LoadBooks();
-
             WireUpBooksList();
         }
 
         private void WireUpBooksList()
         {
-            //listOfBooksBox.DataSource = null;
-            //listOfBooksBox.DataSource = books;
-            //listOfBooksBox.DisplayMember = "Title";
-
             DataSet ds = SqlDataAccess.LoadBooks();
 
             dataGridViewMain.DataSource = null;
@@ -45,24 +38,18 @@ namespace MyLibrary.Forms
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            if (titleText.Text != "")
+            if (titleText.Text != "" && autorText.Text != "")
             {
                 BookModel book = new BookModel();
 
                 book.Tytuł = titleText.Text;
-                if(borrowedBox.Checked)
-                {
-                    book.Pożyczone = "Tak";
-                }
-                else
-                {
-                    book.Pożyczone = "Nie";
-                }
+                book.Autor = autorText.Text;
+                book.Pożyczone = "Nie";
 
                 SqlDataAccess.SaveBook(book);
 
                 titleText.Text = "";
-                borrowedBox.Checked = false;
+                autorText.Text = "";
             }
 
             LoadBooksList();
@@ -76,7 +63,7 @@ namespace MyLibrary.Forms
 
                 currentID = 0;
                 titleText.Text = "";
-                borrowedBox.Checked = false;
+                autorText.Text = "";
             }
             catch (Exception exemp)
             {
@@ -94,10 +81,7 @@ namespace MyLibrary.Forms
 
                 currentID = Convert.ToInt32(row.Cells[0].Value);
                 titleText.Text = row.Cells[1].Value.ToString();
-                if (row.Cells[2].Value.ToString() == "Tak")
-                    borrowedBox.Checked = true;   
-                else
-                    borrowedBox.Checked = false;
+                autorText.Text = row.Cells[2].Value.ToString();
             }
         }
 
@@ -105,11 +89,24 @@ namespace MyLibrary.Forms
         {
             if (titleText.Text != "" && currentID != 0)
             {
-                SqlDataAccess.UpdateBook(currentID, titleText.Text, borrowedBox.Checked);
+                SqlDataAccess.UpdateBook(currentID, titleText.Text, autorText.Text, false);
 
                 currentID = 0;
                 titleText.Text = "";
-                borrowedBox.Checked = false;
+                autorText.Text = "";
+            }
+            LoadBooksList();
+        }
+
+        private void btnBorrow_Click(object sender, EventArgs e)
+        {
+            if (titleText.Text != "" && currentID != 0)
+            {
+                SqlDataAccess.UpdateBook(currentID, titleText.Text, autorText.Text, true);
+
+                currentID = 0;
+                titleText.Text = "";
+                autorText.Text = "";
             }
             LoadBooksList();
         }

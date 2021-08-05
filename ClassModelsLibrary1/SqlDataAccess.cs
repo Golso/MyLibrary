@@ -12,21 +12,11 @@ namespace ClassModelsLibrary1
 {
     public class SqlDataAccess
     {
-        /*
-        public static List<BookModel> LoadBooks()
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                var output = cnn.Query<BookModel>("select * from Book", new DynamicParameters());
-                return output.ToList();
-            }
-        }
-        */
         public static void SaveBook(BookModel book)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Book (Tytuł, Pożyczone) values (@Tytuł, @Pożyczone)", book);
+                cnn.Execute("insert into Book (Tytuł, Autor, Pożyczone) values (@Tytuł, @Autor, @Pożyczone)", book);
             }
         }
 
@@ -38,12 +28,12 @@ namespace ClassModelsLibrary1
             }
         }
 
-        public static void UpdateBook(int id, string title, bool borrowed)
+        public static void UpdateBook(int id, string title, string author, bool borrowed)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string borrow = borrowed ? "Tak" : "Nie";
-                cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Pożyczone = '{borrow}' WHERE ID = {id}");
+                cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Autor = '{author}', Pożyczone = '{borrow}' WHERE ID = {id}");
             }
         }
 

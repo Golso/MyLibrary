@@ -32,18 +32,20 @@ namespace MyLibrary.Forms
             this.btnAddBook = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.titleText = new System.Windows.Forms.TextBox();
-            this.borrowedBox = new System.Windows.Forms.CheckBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.btnUpdateBook = new System.Windows.Forms.Button();
+            this.btnBorrow = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.autorText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(25, 139);
+            this.btnAddBook.Location = new System.Drawing.Point(25, 160);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(257, 69);
+            this.btnAddBook.Size = new System.Drawing.Size(257, 48);
             this.btnAddBook.TabIndex = 1;
             this.btnAddBook.Text = "Dodaj";
             this.btnAddBook.UseVisualStyleBackColor = true;
@@ -65,22 +67,11 @@ namespace MyLibrary.Forms
             this.titleText.Size = new System.Drawing.Size(211, 22);
             this.titleText.TabIndex = 3;
             // 
-            // borrowedBox
-            // 
-            this.borrowedBox.AutoSize = true;
-            this.borrowedBox.Location = new System.Drawing.Point(25, 112);
-            this.borrowedBox.Name = "borrowedBox";
-            this.borrowedBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.borrowedBox.Size = new System.Drawing.Size(99, 21);
-            this.borrowedBox.TabIndex = 5;
-            this.borrowedBox.Text = "Pożyczone";
-            this.borrowedBox.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(25, 295);
+            this.btnDelete.Location = new System.Drawing.Point(25, 322);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(257, 74);
+            this.btnDelete.Size = new System.Drawing.Size(257, 47);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -102,13 +93,39 @@ namespace MyLibrary.Forms
             // 
             // btnUpdateBook
             // 
-            this.btnUpdateBook.Location = new System.Drawing.Point(25, 214);
+            this.btnUpdateBook.Location = new System.Drawing.Point(25, 274);
             this.btnUpdateBook.Name = "btnUpdateBook";
-            this.btnUpdateBook.Size = new System.Drawing.Size(257, 75);
+            this.btnUpdateBook.Size = new System.Drawing.Size(257, 42);
             this.btnUpdateBook.TabIndex = 8;
             this.btnUpdateBook.Text = "Edytuj";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
             this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.Location = new System.Drawing.Point(25, 214);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(257, 54);
+            this.btnBorrow.TabIndex = 9;
+            this.btnBorrow.Text = "Pożycz";
+            this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Autor:";
+            // 
+            // autorText
+            // 
+            this.autorText.Location = new System.Drawing.Point(71, 117);
+            this.autorText.Name = "autorText";
+            this.autorText.Size = new System.Drawing.Size(211, 22);
+            this.autorText.TabIndex = 11;
             // 
             // MyBooksForm
             // 
@@ -116,10 +133,12 @@ namespace MyLibrary.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.autorText);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.btnUpdateBook);
             this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.borrowedBox);
             this.Controls.Add(this.titleText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddBook);
@@ -136,9 +155,11 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox titleText;
-        private System.Windows.Forms.CheckBox borrowedBox;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridViewMain;
         private System.Windows.Forms.Button btnUpdateBook;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox autorText;
     }
 }
