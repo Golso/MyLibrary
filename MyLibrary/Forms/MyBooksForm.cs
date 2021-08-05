@@ -89,7 +89,7 @@ namespace MyLibrary.Forms
         {
             if (titleText.Text != "" && currentID != 0)
             {
-                SqlDataAccess.UpdateBook(currentID, titleText.Text, autorText.Text, false);
+                SqlDataAccess.UpdateBook(currentID, titleText.Text, autorText.Text);
 
                 currentID = 0;
                 titleText.Text = "";
@@ -102,7 +102,7 @@ namespace MyLibrary.Forms
         {
             if (titleText.Text != "" && currentID != 0)
             {
-                SqlDataAccess.UpdateBook(currentID, titleText.Text, autorText.Text, true);
+                SqlDataAccess.ChangeBorrowState(currentID, true);
 
                 currentID = 0;
                 titleText.Text = "";

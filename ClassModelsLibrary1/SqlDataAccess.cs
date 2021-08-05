@@ -28,12 +28,20 @@ namespace ClassModelsLibrary1
             }
         }
 
-        public static void UpdateBook(int id, string title, string author, bool borrowed)
+        public static void UpdateBook(int id, string title, string author)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Autor = '{author}' WHERE ID = {id}");
+            }
+        }
+
+        public static void ChangeBorrowState(int id, bool borrowed)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string borrow = borrowed ? "Tak" : "Nie";
-                cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Autor = '{author}', Pożyczone = '{borrow}' WHERE ID = {id}");
+                cnn.Execute($"UPDATE Book SET Pożyczone = '{borrow}' WHERE ID = {id}");
             }
         }
 
@@ -41,7 +49,20 @@ namespace ClassModelsLibrary1
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select * from Book", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select Id, Tytuł, Autor from Book where Pożyczone == 'Nie'", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                return ds;
+            }
+        }
+
+        public static DataSet LoadBooksBorrowed()
+        {
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select Id, Tytuł, Autor from Book where Pożyczone == 'Tak'", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");
