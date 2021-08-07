@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClassModelsLibrary;
 using ClassModelsLibrary1;
 
 namespace MyLibrary.Forms
@@ -37,7 +29,7 @@ namespace MyLibrary.Forms
             }
             else
             {
-
+                //msg o błędnych danych lub nie istniejącym koncie
             }
         }
 
@@ -66,5 +58,7 @@ namespace MyLibrary.Forms
                 txtPassword.PasswordChar = '•';
             }
         }
+
+
     }
 }

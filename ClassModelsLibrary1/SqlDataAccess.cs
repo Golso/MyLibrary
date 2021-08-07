@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
@@ -19,39 +15,36 @@ namespace ClassModelsLibrary1
                 cnn.Execute("insert into User (Login, Password) values (@Login, @Password)", user);
             }
         }
-        //Not working
-        public static bool loginPasswordExists(string userName, string password)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                int x = cnn.Execute($"SELECT COUNT(UserID) FROM User WHERE Login='{userName}' AND Password='{password}'");
-                if (x==1)
-                    return true;
-            }
-            return false;
-        }
-        /*
+        
         public static bool loginPasswordExists(string userName, string password)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT Count(UserID) FROM User WHERE Login='{userName}' AND Password='{password}'", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT * FROM User WHERE Login='{userName}' AND Password='{password}'", cnn);
                 DataSet ds = new DataSet();
 
-                
+                dataAdapter.Fill(ds, "Info");
+
+                return ds.Tables[0].Rows.Count==1;
             }
         }
-        */
-        //Not working
         public static int getUserId(string userName, string password)
         {
-            int userID=0;
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            int userID = 0;
+
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                userID=cnn.Execute($"SELECT UserID FROM User WHERE Login='{userName}' AND Password='{password}'");
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT UserID FROM User WHERE Login='{userName}' AND Password='{password}'", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                userID = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0]);
             }
+
             return userID;
         }
+
         public static void SaveBook(BookModel book)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
