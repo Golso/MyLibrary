@@ -183,7 +183,7 @@ namespace MyLibrary
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTitle.Location = new System.Drawing.Point(214, 39);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(215, 39);
+            this.lblTitle.Size = new System.Drawing.Size(208, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Moje książki";
             // 
@@ -201,7 +201,6 @@ namespace MyLibrary
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlNavigation.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             this.userPanel.PerformLayout();

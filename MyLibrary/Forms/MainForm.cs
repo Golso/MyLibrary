@@ -17,6 +17,7 @@ namespace MyLibrary
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
+
         private static extern IntPtr CreateRoundRectRgn
          (
               int nLeftRect,
@@ -27,22 +28,19 @@ namespace MyLibrary
               int nHeightEllipse
           );
 
+        private int userID;
 
-        public MainForm()
+        public MainForm(int userID)
         {
+            this.userID = userID;
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
             this.pnlFormLoader.Controls.Clear();
-            MyBooksForm myBookForm = new MyBooksForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            MyBooksForm myBookForm = new MyBooksForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             myBookForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(myBookForm);
             myBookForm.Show();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnMain_Enter(object sender, EventArgs e)
@@ -59,7 +57,7 @@ namespace MyLibrary
         {
             lblTitle.Text = "Moje książki";
             this.pnlFormLoader.Controls.Clear();
-            MyBooksForm myBookForm = new MyBooksForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            MyBooksForm myBookForm = new MyBooksForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             myBookForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(myBookForm);
             myBookForm.Show();

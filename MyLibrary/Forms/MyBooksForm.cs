@@ -14,20 +14,18 @@ namespace MyLibrary.Forms
 {
     public partial class MyBooksForm : Form
     {
-        int currentID = 0;
-        public MyBooksForm()
+        private int currentID = 0;
+        private int userID;
+        public MyBooksForm(int userID)
         {
+            this.userID = userID;
+
             InitializeComponent();
 
             LoadBooksList();
         }
 
         private void LoadBooksList()
-        {
-            WireUpBooksList();
-        }
-
-        private void WireUpBooksList()
         {
             DataSet ds = SqlDataAccess.LoadBooks();
 
@@ -45,6 +43,7 @@ namespace MyLibrary.Forms
                 book.Tytuł = titleText.Text;
                 book.Autor = autorText.Text;
                 book.Pożyczone = "Nie";
+                book.UserID = userID;
 
                 SqlDataAccess.SaveBook(book);
 
