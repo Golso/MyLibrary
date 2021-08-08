@@ -20,7 +20,7 @@ namespace MyLibrary.Forms
 
         private void LoadBooksList()
         {
-            DataSet ds = SqlDataAccess.LoadBooks();
+            DataSet ds = SqlDataAccess.LoadBooks(userID);
 
             dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];

@@ -35,14 +35,13 @@ namespace MyLibrary
             this.btnBorrowed = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.userPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.logoutLabel = new System.Windows.Forms.Label();
             this.pnlNavigation.SuspendLayout();
             this.userPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNavigation
@@ -130,31 +129,23 @@ namespace MyLibrary
             // 
             // userPanel
             // 
-            this.userPanel.Controls.Add(this.label1);
-            this.userPanel.Controls.Add(this.pictureBox1);
+            this.userPanel.Controls.Add(this.logoutLabel);
+            this.userPanel.Controls.Add(this.userNameLabel);
             this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.userPanel.Location = new System.Drawing.Point(0, 0);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(186, 144);
             this.userPanel.TabIndex = 1;
             // 
-            // label1
+            // userNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(39, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Name";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(43, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userNameLabel.Location = new System.Drawing.Point(39, 39);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(103, 20);
+            this.userNameLabel.TabIndex = 1;
+            this.userNameLabel.Text = "User Name";
             // 
             // btnClose
             // 
@@ -187,6 +178,18 @@ namespace MyLibrary
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Moje książki";
             // 
+            // logoutLabel
+            // 
+            this.logoutLabel.AutoSize = true;
+            this.logoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.logoutLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            this.logoutLabel.Location = new System.Drawing.Point(53, 87);
+            this.logoutLabel.Name = "logoutLabel";
+            this.logoutLabel.Size = new System.Drawing.Size(75, 20);
+            this.logoutLabel.TabIndex = 2;
+            this.logoutLabel.Text = "Wyloguj";
+            this.logoutLabel.Click += new System.EventHandler(this.logoutLabel_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,7 +207,6 @@ namespace MyLibrary
             this.pnlNavigation.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             this.userPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,15 +216,15 @@ namespace MyLibrary
 
         private System.Windows.Forms.Panel pnlNavigation;
         private System.Windows.Forms.Panel userPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnMain;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnWanted;
         private System.Windows.Forms.Button btnBorrowed;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlFormLoader;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label logoutLabel;
     }
 }
 

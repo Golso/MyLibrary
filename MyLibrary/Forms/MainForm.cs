@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MyLibrary.Forms;
+using ClassModelsLibrary1;
 
 namespace MyLibrary
 {
@@ -16,7 +11,6 @@ namespace MyLibrary
     {
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
 
         private static extern IntPtr CreateRoundRectRgn
          (
@@ -40,6 +34,7 @@ namespace MyLibrary
             MyBooksForm myBookForm = new MyBooksForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             myBookForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(myBookForm);
+            this.userNameLabel.Text = SqlDataAccess.getUserName(this.userID);
             myBookForm.Show();
         }
 
@@ -77,7 +72,7 @@ namespace MyLibrary
         {
             lblTitle.Text = "Pożyczone";
             this.pnlFormLoader.Controls.Clear();
-            BorrowedForm borrowedForm = new BorrowedForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            BorrowedForm borrowedForm = new BorrowedForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             borrowedForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(borrowedForm);
             borrowedForm.Show();
@@ -126,6 +121,12 @@ namespace MyLibrary
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void logoutLabel_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }

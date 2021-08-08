@@ -45,6 +45,21 @@ namespace ClassModelsLibrary1
             return userID;
         }
 
+        public static string getUserName(int userID)
+        {
+            string userName = "";
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT Login FROM User WHERE UserID = {userID}", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                userName = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[0]);
+            }
+            return userName;
+        }
+
         public static void SaveBook(BookModel book)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -78,11 +93,11 @@ namespace ClassModelsLibrary1
             }
         }
 
-        public static DataSet LoadBooks()
+        public static DataSet LoadBooks(int userID)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select Id, Tytuł, Autor from Book where Pożyczone == 'Nie'", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and userID = {userID}", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");
@@ -91,11 +106,11 @@ namespace ClassModelsLibrary1
             }
         }
 
-        public static DataSet LoadBooksBorrowed()
+        public static DataSet LoadBooksBorrowed(int userID)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("select Id, Tytuł, Autor from Book where Pożyczone == 'Tak'", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Tak' and userID = {userID}", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");

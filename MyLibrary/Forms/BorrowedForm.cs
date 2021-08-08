@@ -1,22 +1,19 @@
 ﻿using ClassModelsLibrary1;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyLibrary.Forms
 {
     public partial class BorrowedForm : Form
     {
-        int currentID = 0;
+        private int currentID = 0;
+        private int userID;
 
-        public BorrowedForm()
+        public BorrowedForm(int userID)
         {
+            this.userID = userID;
+
             InitializeComponent();
 
             LoadBorrowed();
@@ -24,7 +21,7 @@ namespace MyLibrary.Forms
 
         private void LoadBorrowed()
         {
-            DataSet ds = SqlDataAccess.LoadBooksBorrowed();
+            DataSet ds = SqlDataAccess.LoadBooksBorrowed(userID);
 
             dataGridViewBorrowed.DataSource = null;
             dataGridViewBorrowed.DataSource = ds.Tables[0];
