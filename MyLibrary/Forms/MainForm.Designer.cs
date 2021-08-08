@@ -35,11 +35,11 @@ namespace MyLibrary
             this.btnBorrowed = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.userPanel = new System.Windows.Forms.Panel();
+            this.logoutLabel = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.logoutLabel = new System.Windows.Forms.Label();
             this.pnlNavigation.SuspendLayout();
             this.userPanel.SuspendLayout();
             this.SuspendLayout();
@@ -137,15 +137,30 @@ namespace MyLibrary
             this.userPanel.Size = new System.Drawing.Size(186, 144);
             this.userPanel.TabIndex = 1;
             // 
+            // logoutLabel
+            // 
+            this.logoutLabel.AutoSize = true;
+            this.logoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.logoutLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            this.logoutLabel.Location = new System.Drawing.Point(53, 87);
+            this.logoutLabel.Name = "logoutLabel";
+            this.logoutLabel.Size = new System.Drawing.Size(75, 20);
+            this.logoutLabel.TabIndex = 2;
+            this.logoutLabel.Text = "Wyloguj";
+            this.logoutLabel.Click += new System.EventHandler(this.logoutLabel_Click);
+            // 
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.userNameLabel.Location = new System.Drawing.Point(39, 39);
+            this.userNameLabel.MinimumSize = new System.Drawing.Size(103, 20);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(103, 20);
             this.userNameLabel.TabIndex = 1;
             this.userNameLabel.Text = "User Name";
+            this.userNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
             // 
@@ -177,19 +192,6 @@ namespace MyLibrary
             this.lblTitle.Size = new System.Drawing.Size(208, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Moje książki";
-            // 
-            // logoutLabel
-            // 
-            this.logoutLabel.AutoSize = true;
-            this.logoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logoutLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.logoutLabel.Location = new System.Drawing.Point(53, 87);
-            this.logoutLabel.Name = "logoutLabel";
-            this.logoutLabel.Size = new System.Drawing.Size(75, 20);
-            this.logoutLabel.TabIndex = 2;
-            this.logoutLabel.Text = "Wyloguj";
-            this.logoutLabel.Click += new System.EventHandler(this.logoutLabel_Click);
             // 
             // MainForm
             // 

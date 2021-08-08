@@ -25,6 +25,7 @@ namespace MyLibrary.Forms
             dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];
 
+            lblBooksAmount.Text = "Ilość posiadanych książek: "+SqlDataAccess.GetAmountOfBooks(userID);
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)

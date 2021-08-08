@@ -148,6 +148,21 @@ namespace ClassModelsLibrary1
             }
         }
 
+        public static int GetAmountOfBooks(int userID)
+        {
+            int amount = 0;
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select * from Book where DoKupienia == 'Nie' and userID = {userID}", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                amount = ds.Tables[0].Rows.Count;
+            }
+            return amount;
+        }
+
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

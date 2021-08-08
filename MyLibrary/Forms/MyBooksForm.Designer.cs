@@ -38,6 +38,7 @@ namespace MyLibrary.Forms
             this.btnBorrow = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.autorText = new System.Windows.Forms.TextBox();
+            this.lblBooksAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,12 +128,22 @@ namespace MyLibrary.Forms
             this.autorText.Size = new System.Drawing.Size(211, 22);
             this.autorText.TabIndex = 11;
             // 
+            // lblBooksAmount
+            // 
+            this.lblBooksAmount.AutoSize = true;
+            this.lblBooksAmount.Location = new System.Drawing.Point(288, 407);
+            this.lblBooksAmount.Name = "lblBooksAmount";
+            this.lblBooksAmount.Size = new System.Drawing.Size(179, 17);
+            this.lblBooksAmount.TabIndex = 12;
+            this.lblBooksAmount.Text = "Ilość posiadanych książek: ";
+            // 
             // MyBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblBooksAmount);
             this.Controls.Add(this.autorText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBorrow);
@@ -161,5 +172,6 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox autorText;
+        private System.Windows.Forms.Label lblBooksAmount;
     }
 }
