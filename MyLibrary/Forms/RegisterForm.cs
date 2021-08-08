@@ -30,7 +30,7 @@ namespace MyLibrary.Forms
                 txtConPassword.PasswordChar = '•';
             }
         }
-
+        //Co w przypadku gdy login już taki istnieje ?
         private void btnRegister_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel();
@@ -51,7 +51,7 @@ namespace MyLibrary.Forms
             }
             else
             {
-                //msg o niepasujących hasłach
+                MessageBox.Show("Hasła do siebie nie pasują.","Błąd",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
@@ -67,8 +67,15 @@ namespace MyLibrary.Forms
         private void labelToLogin_Click(object sender, EventArgs e)
         {
             new LoginForm().Show();
-            //this.Close();
             this.Hide();
+        }
+
+        private void txtConPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegister_Click(this, new EventArgs());
+            }
         }
     }
 }

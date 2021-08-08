@@ -148,6 +148,19 @@ namespace ClassModelsLibrary1
             }
         }
 
+        public static DataSet SearchBook(int userID, string text)
+        {
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and DoKupienia == 'Nie' and userID = {userID} and Tytuł like '%{text}%'", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                return ds;
+            }
+        }
+
         public static int GetAmountOfBooks(int userID)
         {
             int amount = 0;

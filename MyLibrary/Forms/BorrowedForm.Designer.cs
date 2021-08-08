@@ -50,6 +50,7 @@ namespace MyLibrary.Forms
             this.dataGridViewBorrowed.RowTemplate.Height = 24;
             this.dataGridViewBorrowed.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewBorrowed.TabIndex = 0;
+            this.dataGridViewBorrowed.TabStop = false;
             this.dataGridViewBorrowed.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewBorrowed_CellMouseClick);
             // 
             // btnReturn

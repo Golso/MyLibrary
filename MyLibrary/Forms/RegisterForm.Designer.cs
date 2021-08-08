@@ -104,6 +104,7 @@ namespace MyLibrary.Forms
             this.txtConPassword.PasswordChar = '•';
             this.txtConPassword.Size = new System.Drawing.Size(216, 27);
             this.txtConPassword.TabIndex = 6;
+            this.txtConPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConPassword_KeyDown);
             // 
             // label4
             // 

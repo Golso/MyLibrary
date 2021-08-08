@@ -20,12 +20,14 @@ namespace MyLibrary.Forms
 
         private void LoadBooksList()
         {
+            txtBoxTitleSearch.Text = "Szukaj po tytule...";
+
             DataSet ds = SqlDataAccess.LoadBooks(userID);
 
             dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];
 
-            lblBooksAmount.Text = "Ilość posiadanych książek: "+SqlDataAccess.GetAmountOfBooks(userID);
+            lblBooksAmount.Text = "Ilość posiadanych książek: " + SqlDataAccess.GetAmountOfBooks(userID);
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)
@@ -103,6 +105,14 @@ namespace MyLibrary.Forms
                 autorText.Text = "";
             }
             LoadBooksList();
+        }
+
+        private void txtBoxTitleSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = SqlDataAccess.SearchBook(userID, txtBoxTitleSearch.Text);
+
+            dataGridViewMain.DataSource = null;
+            dataGridViewMain.DataSource = ds.Tables[0];
         }
     }
 }

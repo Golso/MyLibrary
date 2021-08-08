@@ -46,7 +46,7 @@ namespace MyLibrary.Forms
             this.autorText.Location = new System.Drawing.Point(58, 123);
             this.autorText.Name = "autorText";
             this.autorText.Size = new System.Drawing.Size(211, 22);
-            this.autorText.TabIndex = 20;
+            this.autorText.TabIndex = 1;
             // 
             // label2
             // 
@@ -62,7 +62,7 @@ namespace MyLibrary.Forms
             this.btnBought.Location = new System.Drawing.Point(12, 220);
             this.btnBought.Name = "btnBought";
             this.btnBought.Size = new System.Drawing.Size(257, 54);
-            this.btnBought.TabIndex = 18;
+            this.btnBought.TabIndex = 3;
             this.btnBought.Text = "Kupiona";
             this.btnBought.UseVisualStyleBackColor = true;
             this.btnBought.Click += new System.EventHandler(this.btnBought_Click);
@@ -72,7 +72,7 @@ namespace MyLibrary.Forms
             this.btnUpdateBook.Location = new System.Drawing.Point(12, 280);
             this.btnUpdateBook.Name = "btnUpdateBook";
             this.btnUpdateBook.Size = new System.Drawing.Size(257, 42);
-            this.btnUpdateBook.TabIndex = 17;
+            this.btnUpdateBook.TabIndex = 4;
             this.btnUpdateBook.Text = "Edytuj";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
             this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
@@ -89,6 +89,7 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.RowTemplate.Height = 24;
             this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewMain.TabIndex = 16;
+            this.dataGridViewMain.TabStop = false;
             this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
             // 
             // btnDelete
@@ -96,7 +97,7 @@ namespace MyLibrary.Forms
             this.btnDelete.Location = new System.Drawing.Point(12, 328);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(257, 47);
-            this.btnDelete.TabIndex = 15;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -106,7 +107,7 @@ namespace MyLibrary.Forms
             this.titleText.Location = new System.Drawing.Point(58, 74);
             this.titleText.Name = "titleText";
             this.titleText.Size = new System.Drawing.Size(211, 22);
-            this.titleText.TabIndex = 14;
+            this.titleText.TabIndex = 0;
             // 
             // label1
             // 
@@ -122,7 +123,7 @@ namespace MyLibrary.Forms
             this.btnAddBook.Location = new System.Drawing.Point(12, 166);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(257, 48);
-            this.btnAddBook.TabIndex = 12;
+            this.btnAddBook.TabIndex = 2;
             this.btnAddBook.Text = "Dodaj";
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);

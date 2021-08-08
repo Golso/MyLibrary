@@ -115,6 +115,7 @@ namespace MyLibrary.Forms
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(216, 27);
             this.txtPassword.TabIndex = 16;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label3
             // 

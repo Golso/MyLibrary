@@ -39,6 +39,7 @@ namespace MyLibrary.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.autorText = new System.Windows.Forms.TextBox();
             this.lblBooksAmount = new System.Windows.Forms.Label();
+            this.txtBoxTitleSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace MyLibrary.Forms
             this.btnAddBook.Location = new System.Drawing.Point(12, 167);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(257, 48);
-            this.btnAddBook.TabIndex = 1;
+            this.btnAddBook.TabIndex = 2;
             this.btnAddBook.Text = "Dodaj";
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
@@ -66,14 +67,14 @@ namespace MyLibrary.Forms
             this.titleText.Location = new System.Drawing.Point(58, 75);
             this.titleText.Name = "titleText";
             this.titleText.Size = new System.Drawing.Size(211, 22);
-            this.titleText.TabIndex = 3;
+            this.titleText.TabIndex = 0;
             // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(12, 329);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(257, 47);
-            this.btnDelete.TabIndex = 6;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -90,6 +91,7 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.RowTemplate.Height = 24;
             this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewMain.TabIndex = 7;
+            this.dataGridViewMain.TabStop = false;
             this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
             // 
             // btnUpdateBook
@@ -97,7 +99,7 @@ namespace MyLibrary.Forms
             this.btnUpdateBook.Location = new System.Drawing.Point(12, 281);
             this.btnUpdateBook.Name = "btnUpdateBook";
             this.btnUpdateBook.Size = new System.Drawing.Size(257, 42);
-            this.btnUpdateBook.TabIndex = 8;
+            this.btnUpdateBook.TabIndex = 4;
             this.btnUpdateBook.Text = "Edytuj";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
             this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
@@ -107,7 +109,7 @@ namespace MyLibrary.Forms
             this.btnBorrow.Location = new System.Drawing.Point(12, 221);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(257, 54);
-            this.btnBorrow.TabIndex = 9;
+            this.btnBorrow.TabIndex = 3;
             this.btnBorrow.Text = "Pożycz";
             this.btnBorrow.UseVisualStyleBackColor = true;
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
@@ -126,7 +128,7 @@ namespace MyLibrary.Forms
             this.autorText.Location = new System.Drawing.Point(58, 124);
             this.autorText.Name = "autorText";
             this.autorText.Size = new System.Drawing.Size(211, 22);
-            this.autorText.TabIndex = 11;
+            this.autorText.TabIndex = 1;
             // 
             // lblBooksAmount
             // 
@@ -137,12 +139,22 @@ namespace MyLibrary.Forms
             this.lblBooksAmount.TabIndex = 12;
             this.lblBooksAmount.Text = "Ilość posiadanych książek: ";
             // 
+            // txtBoxTitleSearch
+            // 
+            this.txtBoxTitleSearch.Location = new System.Drawing.Point(291, 47);
+            this.txtBoxTitleSearch.Name = "txtBoxTitleSearch";
+            this.txtBoxTitleSearch.Size = new System.Drawing.Size(446, 22);
+            this.txtBoxTitleSearch.TabIndex = 13;
+            this.txtBoxTitleSearch.Text = "Szukaj po tytule...";
+            this.txtBoxTitleSearch.TextChanged += new System.EventHandler(this.txtBoxTitleSearch_TextChanged);
+            // 
             // MyBooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBoxTitleSearch);
             this.Controls.Add(this.lblBooksAmount);
             this.Controls.Add(this.autorText);
             this.Controls.Add(this.label2);
@@ -173,5 +185,6 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox autorText;
         private System.Windows.Forms.Label lblBooksAmount;
+        private System.Windows.Forms.TextBox txtBoxTitleSearch;
     }
 }

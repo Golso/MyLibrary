@@ -59,6 +59,12 @@ namespace MyLibrary.Forms
             }
         }
 
-
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, new EventArgs());
+            }
+        }
     }
 }

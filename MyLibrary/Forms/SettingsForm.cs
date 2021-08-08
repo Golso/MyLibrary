@@ -18,11 +18,14 @@ namespace MyLibrary.Forms
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            //mssg asking if for sure
-            SqlDataAccess.deleteUser(userID);
+            DialogResult delete = MessageBox.Show("Czy na pewno chcesz usunąć konto?", "Na pewno?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (delete == DialogResult.Yes)
+            {
+                SqlDataAccess.deleteUser(userID);
 
-            new LoginForm().Show();
-            main.Hide();
+                new LoginForm().Show();
+                main.Hide();
+            }
         }
     }
 }
