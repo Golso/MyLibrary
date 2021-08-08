@@ -15,6 +15,14 @@ namespace ClassModelsLibrary1
                 cnn.Execute("insert into User (Login, Password) values (@Login, @Password)", user);
             }
         }
+
+        public static void deleteUser(int userID)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"DELETE FROM User WHERE UserID = {userID}");
+            }
+        }
         
         public static bool loginPasswordExists(string userName, string password)
         {

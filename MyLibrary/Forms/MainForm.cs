@@ -112,7 +112,7 @@ namespace MyLibrary
         {
             lblTitle.Text = "Ustawienia";
             this.pnlFormLoader.Controls.Clear();
-            SettingsForm settingsForm = new SettingsForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            SettingsForm settingsForm = new SettingsForm(userID, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             settingsForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(settingsForm);
             settingsForm.Show();
