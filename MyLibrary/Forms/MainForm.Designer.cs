@@ -181,6 +181,7 @@ namespace MyLibrary
             // logoutLabel
             // 
             this.logoutLabel.AutoSize = true;
+            this.logoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.logoutLabel.ForeColor = System.Drawing.Color.DarkBlue;
             this.logoutLabel.Location = new System.Drawing.Point(53, 87);

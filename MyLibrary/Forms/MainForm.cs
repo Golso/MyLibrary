@@ -92,7 +92,7 @@ namespace MyLibrary
         {
             lblTitle.Text = "Do kupienia";
             this.pnlFormLoader.Controls.Clear();
-            WantedForm wantedForm = new WantedForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            WantedForm wantedForm = new WantedForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             wantedForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(wantedForm);
             wantedForm.Show();

@@ -36,6 +36,7 @@ namespace MyLibrary.Forms
                 book.Tytuł = titleText.Text;
                 book.Autor = autorText.Text;
                 book.Pożyczone = "Nie";
+                book.DoKupienia = "Nie";
                 book.UserID = userID;
 
                 SqlDataAccess.SaveBook(book);

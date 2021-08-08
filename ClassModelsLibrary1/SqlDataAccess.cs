@@ -72,7 +72,7 @@ namespace ClassModelsLibrary1
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Book (Tytuł, Autor, Pożyczone, UserID) values (@Tytuł, @Autor, @Pożyczone, @UserID)", book);
+                cnn.Execute("insert into Book (Tytuł, Autor, Pożyczone, DoKupienia, UserID) values (@Tytuł, @Autor, @Pożyczone, @DoKupienia, @UserID)", book);
             }
         }
 
@@ -101,11 +101,32 @@ namespace ClassModelsLibrary1
             }
         }
 
+        public static void BuyBook(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE Book SET DoKupienia = '{"Nie"}' WHERE ID = {id}");
+            }
+        }
+
         public static DataSet LoadBooks(int userID)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and userID = {userID}", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and DoKupienia == 'Nie' and userID = {userID}", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                return ds;
+            }
+        }
+
+        public static DataSet LoadBooksWanted(int userID)
+        {
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where DoKupienia == 'Tak' and userID = {userID}", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");

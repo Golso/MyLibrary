@@ -70,9 +70,8 @@ namespace MyLibrary.Forms
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtUsername.Location = new System.Drawing.Point(34, 163);
-            this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(216, 28);
+            this.txtUsername.Size = new System.Drawing.Size(216, 27);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
@@ -81,10 +80,9 @@ namespace MyLibrary.Forms
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPassword.Location = new System.Drawing.Point(36, 232);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Size = new System.Drawing.Size(216, 28);
+            this.txtPassword.Size = new System.Drawing.Size(216, 27);
             this.txtPassword.TabIndex = 4;
             // 
             // label3
@@ -102,10 +100,9 @@ namespace MyLibrary.Forms
             this.txtConPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConPassword.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtConPassword.Location = new System.Drawing.Point(36, 289);
-            this.txtConPassword.Multiline = true;
             this.txtConPassword.Name = "txtConPassword";
             this.txtConPassword.PasswordChar = '•';
-            this.txtConPassword.Size = new System.Drawing.Size(216, 28);
+            this.txtConPassword.Size = new System.Drawing.Size(216, 27);
             this.txtConPassword.TabIndex = 6;
             // 
             // label4

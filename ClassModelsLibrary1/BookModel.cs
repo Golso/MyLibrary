@@ -12,6 +12,7 @@ namespace ClassModelsLibrary1
         public string Tytuł { get; set; }
         public string Autor { get; set; }
         public string Pożyczone { get; set; }
+        public string DoKupienia { get; set; }
         public int UserID { get; set; }
     }
 }

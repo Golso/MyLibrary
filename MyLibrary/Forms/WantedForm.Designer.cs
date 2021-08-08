@@ -29,17 +29,103 @@ namespace MyLibrary.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.autorText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBought = new System.Windows.Forms.Button();
+            this.btnUpdateBook = new System.Windows.Forms.Button();
+            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.titleText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddBook = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
+            // 
+            // autorText
+            // 
+            this.autorText.Location = new System.Drawing.Point(58, 123);
+            this.autorText.Name = "autorText";
+            this.autorText.Size = new System.Drawing.Size(211, 22);
+            this.autorText.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Autor:";
+            // 
+            // btnBought
+            // 
+            this.btnBought.Location = new System.Drawing.Point(12, 220);
+            this.btnBought.Name = "btnBought";
+            this.btnBought.Size = new System.Drawing.Size(257, 54);
+            this.btnBought.TabIndex = 18;
+            this.btnBought.Text = "Kupiona";
+            this.btnBought.UseVisualStyleBackColor = true;
+            this.btnBought.Click += new System.EventHandler(this.btnBought_Click);
+            // 
+            // btnUpdateBook
+            // 
+            this.btnUpdateBook.Location = new System.Drawing.Point(12, 280);
+            this.btnUpdateBook.Name = "btnUpdateBook";
+            this.btnUpdateBook.Size = new System.Drawing.Size(257, 42);
+            this.btnUpdateBook.TabIndex = 17;
+            this.btnUpdateBook.Text = "Edytuj";
+            this.btnUpdateBook.UseVisualStyleBackColor = true;
+            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            // 
+            // dataGridViewMain
+            // 
+            this.dataGridViewMain.AllowUserToAddRows = false;
+            this.dataGridViewMain.AllowUserToDeleteRows = false;
+            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMain.Location = new System.Drawing.Point(290, 74);
+            this.dataGridViewMain.Name = "dataGridViewMain";
+            this.dataGridViewMain.ReadOnly = true;
+            this.dataGridViewMain.RowHeadersWidth = 51;
+            this.dataGridViewMain.RowTemplate.Height = 24;
+            this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
+            this.dataGridViewMain.TabIndex = 16;
+            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(12, 328);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(257, 47);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Usuń";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // titleText
+            // 
+            this.titleText.Location = new System.Drawing.Point(58, 74);
+            this.titleText.Name = "titleText";
+            this.titleText.Size = new System.Drawing.Size(211, 22);
+            this.titleText.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(340, 178);
+            this.label1.Location = new System.Drawing.Point(9, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wanted";
+            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Tytuł:";
+            // 
+            // btnAddBook
+            // 
+            this.btnAddBook.Location = new System.Drawing.Point(12, 166);
+            this.btnAddBook.Name = "btnAddBook";
+            this.btnAddBook.Size = new System.Drawing.Size(257, 48);
+            this.btnAddBook.TabIndex = 12;
+            this.btnAddBook.Text = "Dodaj";
+            this.btnAddBook.UseVisualStyleBackColor = true;
+            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
             // WantedForm
             // 
@@ -47,10 +133,19 @@ namespace MyLibrary.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.autorText);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnBought);
+            this.Controls.Add(this.btnUpdateBook);
+            this.Controls.Add(this.dataGridViewMain);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.titleText);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAddBook);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WantedForm";
             this.Text = "WantedForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,6 +153,14 @@ namespace MyLibrary.Forms
 
         #endregion
 
+        private System.Windows.Forms.TextBox autorText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBought;
+        private System.Windows.Forms.Button btnUpdateBook;
+        private System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox titleText;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddBook;
     }
 }

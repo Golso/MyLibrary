@@ -30,17 +30,37 @@ namespace MyLibrary.Forms
         private void InitializeComponent()
         {
             this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnNormalMode = new System.Windows.Forms.Button();
+            this.btnBlackMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(284, 167);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(167, 276);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(239, 106);
+            this.btnDeleteAccount.Size = new System.Drawing.Size(429, 106);
             this.btnDeleteAccount.TabIndex = 0;
             this.btnDeleteAccount.Text = "Usuń konto";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
+            // 
+            // btnNormalMode
+            // 
+            this.btnNormalMode.Location = new System.Drawing.Point(167, 72);
+            this.btnNormalMode.Name = "btnNormalMode";
+            this.btnNormalMode.Size = new System.Drawing.Size(196, 158);
+            this.btnNormalMode.TabIndex = 1;
+            this.btnNormalMode.Text = "Normalny";
+            this.btnNormalMode.UseVisualStyleBackColor = true;
+            // 
+            // btnBlackMode
+            // 
+            this.btnBlackMode.Location = new System.Drawing.Point(400, 72);
+            this.btnBlackMode.Name = "btnBlackMode";
+            this.btnBlackMode.Size = new System.Drawing.Size(196, 158);
+            this.btnBlackMode.TabIndex = 2;
+            this.btnBlackMode.Text = "Czarny";
+            this.btnBlackMode.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -48,6 +68,8 @@ namespace MyLibrary.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBlackMode);
+            this.Controls.Add(this.btnNormalMode);
             this.Controls.Add(this.btnDeleteAccount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SettingsForm";
@@ -59,5 +81,7 @@ namespace MyLibrary.Forms
         #endregion
 
         private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnNormalMode;
+        private System.Windows.Forms.Button btnBlackMode;
     }
 }

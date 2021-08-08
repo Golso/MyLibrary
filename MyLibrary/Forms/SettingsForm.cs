@@ -18,6 +18,7 @@ namespace MyLibrary.Forms
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
+            //mssg asking if for sure
             SqlDataAccess.deleteUser(userID);
 
             new LoginForm().Show();
