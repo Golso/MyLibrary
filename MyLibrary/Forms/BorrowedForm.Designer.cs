@@ -35,6 +35,8 @@ namespace MyLibrary.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.titleText = new System.Windows.Forms.TextBox();
             this.autorText = new System.Windows.Forms.TextBox();
+            this.whoText = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBorrowed)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +99,32 @@ namespace MyLibrary.Forms
             this.autorText.Size = new System.Drawing.Size(145, 22);
             this.autorText.TabIndex = 5;
             // 
+            // whoText
+            // 
+            this.whoText.Enabled = false;
+            this.whoText.Location = new System.Drawing.Point(127, 163);
+            this.whoText.Name = "whoText";
+            this.whoText.ReadOnly = true;
+            this.whoText.Size = new System.Drawing.Size(145, 22);
+            this.whoText.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Komu:";
+            // 
             // BorrowedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.whoText);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.autorText);
             this.Controls.Add(this.titleText);
             this.Controls.Add(this.label2);
@@ -126,5 +148,7 @@ namespace MyLibrary.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox titleText;
         private System.Windows.Forms.TextBox autorText;
+        private System.Windows.Forms.TextBox whoText;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -38,7 +38,6 @@ namespace MyLibrary.Forms
 
                 book.Tytuł = titleText.Text;
                 book.Autor = autorText.Text;
-                book.Pożyczone = "Nie";
                 book.DoKupienia = "Nie";
                 book.UserID = userID;
 
@@ -98,7 +97,13 @@ namespace MyLibrary.Forms
         {
             if (titleText.Text != "" && currentID != 0)
             {
-                SqlDataAccess.ChangeBorrowState(currentID, true);
+                BorrowedBookModel book = new BorrowedBookModel();
+                
+                book.Tytuł = titleText.Text;
+                book.Autor = autorText.Text;
+                book.UserID = userID;
+
+                new WhoBorrowsForm(book, currentID).Show();
 
                 currentID = 0;
                 titleText.Text = "";

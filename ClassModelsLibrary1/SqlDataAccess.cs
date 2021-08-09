@@ -72,7 +72,15 @@ namespace ClassModelsLibrary1
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Book (Tytuł, Autor, Pożyczone, DoKupienia, UserID) values (@Tytuł, @Autor, @Pożyczone, @DoKupienia, @UserID)", book);
+                cnn.Execute("insert into Book (Tytuł, Autor, DoKupienia, UserID) values (@Tytuł, @Autor, @DoKupienia, @UserID)", book);
+            }
+        }
+
+        public static void SaveBorrowedBook(BorrowedBookModel book)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into BorrowedBook (Tytuł, Autor, Komu, UserID) values (@Tytuł, @Autor, @Komu, @UserID)", book);
             }
         }
 
@@ -84,20 +92,19 @@ namespace ClassModelsLibrary1
             }
         }
 
+        public static void DeleteBorrowedBook(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("DELETE FROM BorrowedBook WHERE ID = " + id);
+            }
+        }
+
         public static void UpdateBook(int id, string title, string author)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute($"UPDATE Book SET Tytuł = '{title}', Autor = '{author}' WHERE ID = {id}");
-            }
-        }
-
-        public static void ChangeBorrowState(int id, bool borrowed)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                string borrow = borrowed ? "Tak" : "Nie";
-                cnn.Execute($"UPDATE Book SET Pożyczone = '{borrow}' WHERE ID = {id}");
             }
         }
 
@@ -113,7 +120,7 @@ namespace ClassModelsLibrary1
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and DoKupienia == 'Nie' and userID = {userID}", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where DoKupienia == 'Nie' and userID = {userID}", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");
@@ -139,7 +146,7 @@ namespace ClassModelsLibrary1
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Tak' and userID = {userID}", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor, Komu from BorrowedBook where userID = {userID}", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");
@@ -152,7 +159,7 @@ namespace ClassModelsLibrary1
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where Pożyczone == 'Nie' and DoKupienia == 'Nie' and userID = {userID} and Tytuł like '%{text}%'", cnn);
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select Id, Tytuł, Autor from Book where DoKupienia == 'Nie' and userID = {userID} and Tytuł like '%{text}%'", cnn);
                 DataSet ds = new DataSet();
 
                 dataAdapter.Fill(ds, "Info");
@@ -171,7 +178,16 @@ namespace ClassModelsLibrary1
 
                 dataAdapter.Fill(ds, "Info");
 
-                amount = ds.Tables[0].Rows.Count;
+                amount += ds.Tables[0].Rows.Count;
+            }
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"select * from BorrowedBook where userID = {userID}", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                amount += ds.Tables[0].Rows.Count;
             }
             return amount;
         }

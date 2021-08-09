@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassModelsLibrary1;
 
@@ -41,7 +35,6 @@ namespace MyLibrary.Forms
 
                 book.Tytuł = titleText.Text;
                 book.Autor = autorText.Text;
-                book.Pożyczone = "Nie";
                 book.DoKupienia = "Tak";
                 book.UserID = userID;
 

@@ -93,6 +93,12 @@
     <Compile Include="Forms\WantedForm.Designer.cs">
       <DependentUpon>WantedForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WhoBorrowsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WhoBorrowsForm.Designer.cs">
+      <DependentUpon>WhoBorrowsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\LoginForm.resx">
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WantedForm.resx">
       <DependentUpon>WantedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WhoBorrowsForm.resx">
+      <DependentUpon>WhoBorrowsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

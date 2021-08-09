@@ -29,11 +29,19 @@ namespace MyLibrary.Forms
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            SqlDataAccess.ChangeBorrowState(currentID, false);
+            BookModel book = new BookModel();
+            book.Tytuł = titleText.Text;
+            book.Autor = autorText.Text;
+            book.DoKupienia = "Nie";
+            book.UserID = userID;
+
+            SqlDataAccess.SaveBook(book);
+            SqlDataAccess.DeleteBorrowedBook(currentID);
 
             currentID = 0;
             titleText.Text = "";
             autorText.Text = "";
+            whoText.Text = "";
 
             LoadBorrowed();
         }
@@ -47,6 +55,7 @@ namespace MyLibrary.Forms
                 currentID = Convert.ToInt32(row.Cells[0].Value);
                 titleText.Text = row.Cells[1].Value.ToString();
                 autorText.Text = row.Cells[2].Value.ToString();
+                whoText.Text = row.Cells[3].Value.ToString();
             }
         }
     }
