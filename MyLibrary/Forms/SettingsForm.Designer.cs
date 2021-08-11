@@ -52,6 +52,7 @@ namespace MyLibrary.Forms
             this.btnNormalMode.TabIndex = 1;
             this.btnNormalMode.Text = "Normalny";
             this.btnNormalMode.UseVisualStyleBackColor = true;
+            this.btnNormalMode.Click += new System.EventHandler(this.btnNormalMode_Click);
             // 
             // btnBlackMode
             // 
@@ -61,6 +62,7 @@ namespace MyLibrary.Forms
             this.btnBlackMode.TabIndex = 2;
             this.btnBlackMode.Text = "Czarny";
             this.btnBlackMode.UseVisualStyleBackColor = true;
+            this.btnBlackMode.Click += new System.EventHandler(this.btnBlackMode_Click);
             // 
             // SettingsForm
             // 

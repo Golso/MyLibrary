@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using ClassModelsLibrary1;
 
@@ -7,13 +8,15 @@ namespace MyLibrary.Forms
     public partial class SettingsForm : Form
     {
         private int userID;
-        Form main;
-        public SettingsForm(int userID, Form main)
+        MainForm main;
+        public SettingsForm(int userID, MainForm main)
         {
             this.userID = userID;
             this.main = main;
 
             InitializeComponent();
+
+            setMode(SqlDataAccess.getUserState(userID));
         }
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
@@ -26,6 +29,37 @@ namespace MyLibrary.Forms
                 new LoginForm().Show();
                 main.Hide();
             }
+        }
+
+        private void btnNormalMode_Click(object sender, EventArgs e)
+        {
+            SqlDataAccess.changeAppState(userID, 0);
+            main.changeMode(0);
+            setMode(0);
+        }
+
+        private void btnBlackMode_Click(object sender, EventArgs e)
+        {
+            SqlDataAccess.changeAppState(userID, 1);
+            main.changeMode(1);
+            setMode(1);
+        }
+
+        private void setDarkMode()
+        {
+            this.BackColor = Color.Black;
+        }
+
+        private void setNormalMode()
+        {
+            this.BackColor = Color.DarkSlateBlue;
+        }
+
+        private void setMode(int state)
+        {
+            if (state == 1)
+                setDarkMode();
+            else setNormalMode();
         }
     }
 }

@@ -39,6 +39,7 @@ namespace MyLibrary.Forms
             if (txtPassword.Text == txtConPassword.Text)
             {
                 user.Password = txtPassword.Text;
+                user.Stan = 0;
                 SqlDataAccess.AddUser(user);
 
                 txtUsername.Text = "";

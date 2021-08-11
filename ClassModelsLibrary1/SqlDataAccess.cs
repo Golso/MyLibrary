@@ -12,7 +12,7 @@ namespace ClassModelsLibrary1
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into User (Login, Password) values (@Login, @Password)", user);
+                cnn.Execute("insert into User (Login, Password, Stan) values (@Login, @Password, @Stan)", user);
             }
         }
 
@@ -66,6 +66,31 @@ namespace ClassModelsLibrary1
                 userName = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[0]);
             }
             return userName;
+        }
+
+        public static int getUserState(int userID)
+        {
+            int userState = 0;
+
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT Stan FROM User WHERE UserID = {userID}", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                userState = Convert.ToInt32(ds.Tables[0].Rows[0].ItemArray[0]);
+            }
+
+            return userState;
+        }
+
+        public static void changeAppState(int userID, int state)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute($"UPDATE User SET Stan = '{state}' WHERE UserID = {userID}");
+            }
         }
 
         public static void SaveBook(BookModel book)

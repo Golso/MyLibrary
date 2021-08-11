@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using ClassModelsLibrary1;
 
@@ -14,6 +15,8 @@ namespace MyLibrary.Forms
             this.userID = userID;
 
             InitializeComponent();
+
+            setMode(SqlDataAccess.getUserState(userID));
 
             LoadBooksList();
         }
@@ -102,6 +105,25 @@ namespace MyLibrary.Forms
                 titleText.Text = row.Cells[1].Value.ToString();
                 autorText.Text = row.Cells[2].Value.ToString();
             }
+        }
+
+        private void setDarkMode()
+        {
+            this.BackColor = Color.Black;
+        }
+
+        private void setNormalMode()
+        {
+            this.BackColor = Color.DarkSlateBlue;
+        }
+
+        private void setMode(int state)
+        {
+            if (state == 1)
+            {
+                setDarkMode();
+            }
+            else setNormalMode();
         }
     }
 }

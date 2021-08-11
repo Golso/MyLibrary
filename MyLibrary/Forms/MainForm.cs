@@ -36,6 +36,8 @@ namespace MyLibrary
             this.pnlFormLoader.Controls.Add(myBookForm);
             this.userNameLabel.Text = SqlDataAccess.getUserName(this.userID);
             myBookForm.Show();
+
+            changeMode(SqlDataAccess.getUserState(userID));
         }
 
         private void btnMain_Enter(object sender, EventArgs e)
@@ -127,6 +129,38 @@ namespace MyLibrary
         {
             new LoginForm().Show();
             this.Hide();
+        }
+
+        private void changeToDarkMode()
+        {
+            this.BackColor = Color.FromArgb(10,10,10);
+            this.pnlNavigation.BackColor = Color.FromArgb(0, 0, 0);
+            this.userPanel.BackColor = Color.FromArgb(0, 0, 0);
+
+            this.lblTitle.ForeColor = Color.FromArgb(255, 255, 255);
+            this.userNameLabel.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void changeToNormalMode()
+        {
+            this.BackColor = Color.DarkSlateBlue;
+            this.pnlNavigation.BackColor = Color.DarkOrchid;
+            this.userPanel.BackColor = Color.DarkOrchid;
+
+            this.lblTitle.ForeColor = Color.Black;
+            this.userNameLabel.ForeColor = Color.Black;
+        }
+
+        public void changeMode(int state)
+        {
+            if (state == 1)
+            {
+                changeToDarkMode();
+            }
+            else
+            {
+                changeToNormalMode();
+            }
         }
     }
 }

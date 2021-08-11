@@ -57,9 +57,9 @@ namespace MyLibrary.Forms
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(51, 228);
+            this.btnReturn.Location = new System.Drawing.Point(15, 228);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(221, 83);
+            this.btnReturn.Size = new System.Drawing.Size(257, 83);
             this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Zwrócone";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@ namespace MyLibrary.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 73);
+            this.label1.Location = new System.Drawing.Point(12, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace MyLibrary.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 120);
+            this.label2.Location = new System.Drawing.Point(12, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 3;
@@ -86,32 +86,32 @@ namespace MyLibrary.Forms
             // titleText
             // 
             this.titleText.Enabled = false;
-            this.titleText.Location = new System.Drawing.Point(127, 73);
+            this.titleText.Location = new System.Drawing.Point(61, 73);
             this.titleText.Name = "titleText";
-            this.titleText.Size = new System.Drawing.Size(145, 22);
+            this.titleText.Size = new System.Drawing.Size(211, 22);
             this.titleText.TabIndex = 4;
             // 
             // autorText
             // 
             this.autorText.Enabled = false;
-            this.autorText.Location = new System.Drawing.Point(127, 117);
+            this.autorText.Location = new System.Drawing.Point(64, 117);
             this.autorText.Name = "autorText";
-            this.autorText.Size = new System.Drawing.Size(145, 22);
+            this.autorText.Size = new System.Drawing.Size(208, 22);
             this.autorText.TabIndex = 5;
             // 
             // whoText
             // 
             this.whoText.Enabled = false;
-            this.whoText.Location = new System.Drawing.Point(127, 163);
+            this.whoText.Location = new System.Drawing.Point(66, 163);
             this.whoText.Name = "whoText";
             this.whoText.ReadOnly = true;
-            this.whoText.Size = new System.Drawing.Size(145, 22);
+            this.whoText.Size = new System.Drawing.Size(206, 22);
             this.whoText.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 166);
+            this.label3.Location = new System.Drawing.Point(12, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 6;

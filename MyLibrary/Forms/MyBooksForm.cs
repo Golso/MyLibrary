@@ -1,6 +1,7 @@
 ﻿using ClassModelsLibrary1;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MyLibrary.Forms
@@ -14,6 +15,8 @@ namespace MyLibrary.Forms
             this.userID = userID;
 
             InitializeComponent();
+
+            setMode(SqlDataAccess.getUserState(userID));
 
             LoadBooksList();
         }
@@ -118,6 +121,25 @@ namespace MyLibrary.Forms
 
             dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];
+        }
+
+        private void setDarkMode()
+        {
+            this.BackColor = Color.Black;
+        }
+
+        private void setNormalMode()
+        {
+            this.BackColor = Color.DarkSlateBlue;
+        }
+
+        private void setMode(int state)
+        {
+            if (state == 1)
+            {
+                setDarkMode();
+            }
+            else setNormalMode();
         }
     }
 }
