@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -23,10 +23,12 @@ namespace MyLibrary
           );
 
         private int userID;
+        private int userState;
 
         public MainForm(int userID)
         {
             this.userID = userID;
+            userState = SqlDataAccess.getUserState(userID);
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
@@ -37,17 +39,17 @@ namespace MyLibrary
             this.userNameLabel.Text = SqlDataAccess.getUserName(this.userID);
             myBookForm.Show();
 
-            changeMode(SqlDataAccess.getUserState(userID));
+            changeMode(userState);
         }
 
         private void btnMain_Enter(object sender, EventArgs e)
         {
-            btnMain.BackColor = Color.DarkViolet;
+            btnMain.BackColor = Color.FromArgb(39, 39, 58);
         }
 
         private void btnMain_Leave(object sender, EventArgs e)
         {
-            btnMain.BackColor = Color.DarkOrchid;
+            btnMain.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -62,12 +64,12 @@ namespace MyLibrary
 
         private void btnBorrowed_Enter(object sender, EventArgs e)
         {
-            btnBorrowed.BackColor = Color.DarkViolet;
+            btnBorrowed.BackColor = Color.FromArgb(39, 39, 58);
         }
 
         private void btnBorrowed_Leave(object sender, EventArgs e)
         {
-            btnBorrowed.BackColor = Color.DarkOrchid;
+            btnBorrowed.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnBorrowed_Click(object sender, EventArgs e)
@@ -82,12 +84,12 @@ namespace MyLibrary
 
         private void btnWanted_Enter(object sender, EventArgs e)
         {
-            btnWanted.BackColor = Color.DarkViolet;
+            btnWanted.BackColor = Color.FromArgb(39, 39, 58);
         }
 
         private void btnWanted_Leave(object sender, EventArgs e)
         {
-            btnWanted.BackColor = Color.DarkOrchid;
+            btnWanted.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnWanted_Click(object sender, EventArgs e)
@@ -102,12 +104,12 @@ namespace MyLibrary
 
         private void btnSettings_Enter(object sender, EventArgs e)
         {
-            btnSettings.BackColor = Color.DarkViolet;
+            btnSettings.BackColor = Color.FromArgb(39, 39, 58);
         }
 
         private void btnSettings_Leave(object sender, EventArgs e)
         {
-            btnSettings.BackColor = Color.DarkOrchid;
+            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -143,9 +145,9 @@ namespace MyLibrary
 
         private void changeToNormalMode()
         {
-            this.BackColor = Color.DarkSlateBlue;
-            this.pnlNavigation.BackColor = Color.DarkOrchid;
-            this.userPanel.BackColor = Color.DarkOrchid;
+            this.BackColor = Color.FromArgb(51, 51, 76);
+            this.pnlNavigation.BackColor = Color.FromArgb(51, 51, 76);
+            this.userPanel.BackColor = Color.FromArgb(39, 39, 58);
 
             this.lblTitle.ForeColor = Color.Black;
             this.userNameLabel.ForeColor = Color.Black;

@@ -46,7 +46,7 @@ namespace MyLibrary
             // 
             // pnlNavigation
             // 
-            this.pnlNavigation.BackColor = System.Drawing.Color.DarkOrchid;
+            this.pnlNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.pnlNavigation.Controls.Add(this.btnSettings);
             this.pnlNavigation.Controls.Add(this.btnWanted);
             this.pnlNavigation.Controls.Add(this.btnBorrowed);
@@ -82,7 +82,7 @@ namespace MyLibrary
             this.btnWanted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWanted.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWanted.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnWanted.Location = new System.Drawing.Point(0, 264);
+            this.btnWanted.Location = new System.Drawing.Point(0, 234);
             this.btnWanted.Name = "btnWanted";
             this.btnWanted.Size = new System.Drawing.Size(186, 60);
             this.btnWanted.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace MyLibrary
             this.btnBorrowed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnBorrowed.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnBorrowed.Location = new System.Drawing.Point(0, 204);
+            this.btnBorrowed.Location = new System.Drawing.Point(0, 174);
             this.btnBorrowed.Name = "btnBorrowed";
             this.btnBorrowed.Size = new System.Drawing.Size(186, 60);
             this.btnBorrowed.TabIndex = 3;
@@ -117,7 +117,7 @@ namespace MyLibrary
             this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnMain.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnMain.Location = new System.Drawing.Point(0, 144);
+            this.btnMain.Location = new System.Drawing.Point(0, 114);
             this.btnMain.Name = "btnMain";
             this.btnMain.Size = new System.Drawing.Size(186, 60);
             this.btnMain.TabIndex = 2;
@@ -129,12 +129,13 @@ namespace MyLibrary
             // 
             // userPanel
             // 
+            this.userPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.userPanel.Controls.Add(this.logoutLabel);
             this.userPanel.Controls.Add(this.userNameLabel);
             this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.userPanel.Location = new System.Drawing.Point(0, 0);
             this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(186, 144);
+            this.userPanel.Size = new System.Drawing.Size(186, 114);
             this.userPanel.TabIndex = 1;
             // 
             // logoutLabel
@@ -142,8 +143,8 @@ namespace MyLibrary
             this.logoutLabel.AutoSize = true;
             this.logoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.logoutLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.logoutLabel.Location = new System.Drawing.Point(53, 87);
+            this.logoutLabel.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.logoutLabel.Location = new System.Drawing.Point(53, 65);
             this.logoutLabel.Name = "logoutLabel";
             this.logoutLabel.Size = new System.Drawing.Size(75, 20);
             this.logoutLabel.TabIndex = 2;
@@ -154,7 +155,7 @@ namespace MyLibrary
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userNameLabel.Location = new System.Drawing.Point(39, 39);
+            this.userNameLabel.Location = new System.Drawing.Point(39, 17);
             this.userNameLabel.MinimumSize = new System.Drawing.Size(103, 20);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(103, 20);
@@ -177,27 +178,29 @@ namespace MyLibrary
             // 
             // pnlFormLoader
             // 
+            this.pnlFormLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFormLoader.Location = new System.Drawing.Point(186, 120);
+            this.pnlFormLoader.Location = new System.Drawing.Point(186, 114);
             this.pnlFormLoader.Name = "pnlFormLoader";
-            this.pnlFormLoader.Size = new System.Drawing.Size(765, 457);
+            this.pnlFormLoader.Size = new System.Drawing.Size(765, 463);
             this.pnlFormLoader.TabIndex = 2;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.Location = new System.Drawing.Point(214, 39);
+            this.lblTitle.Location = new System.Drawing.Point(445, 47);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(208, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Moje książki";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlFormLoader);

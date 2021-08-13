@@ -114,7 +114,7 @@ namespace MyLibrary.Forms
 
         private void setNormalMode()
         {
-            this.BackColor = Color.DarkSlateBlue;
+            this.BackColor = Color.FromArgb(100, 100, 100);
         }
 
         private void setMode(int state)
