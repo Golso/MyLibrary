@@ -46,7 +46,7 @@ namespace MyLibrary
             // 
             // pnlNavigation
             // 
-            this.pnlNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.pnlNavigation.BackColor = System.Drawing.Color.Navy;
             this.pnlNavigation.Controls.Add(this.btnSettings);
             this.pnlNavigation.Controls.Add(this.btnWanted);
             this.pnlNavigation.Controls.Add(this.btnBorrowed);
@@ -72,8 +72,6 @@ namespace MyLibrary
             this.btnSettings.Text = "Ustawienia";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            this.btnSettings.Enter += new System.EventHandler(this.btnSettings_Enter);
-            this.btnSettings.Leave += new System.EventHandler(this.btnSettings_Leave);
             // 
             // btnWanted
             // 
@@ -89,8 +87,6 @@ namespace MyLibrary
             this.btnWanted.Text = "Do kupienia";
             this.btnWanted.UseVisualStyleBackColor = true;
             this.btnWanted.Click += new System.EventHandler(this.btnWanted_Click);
-            this.btnWanted.Enter += new System.EventHandler(this.btnWanted_Enter);
-            this.btnWanted.Leave += new System.EventHandler(this.btnWanted_Leave);
             // 
             // btnBorrowed
             // 
@@ -106,12 +102,10 @@ namespace MyLibrary
             this.btnBorrowed.Text = "Pożyczone";
             this.btnBorrowed.UseVisualStyleBackColor = true;
             this.btnBorrowed.Click += new System.EventHandler(this.btnBorrowed_Click);
-            this.btnBorrowed.Enter += new System.EventHandler(this.btnBorrowed_Enter);
-            this.btnBorrowed.Leave += new System.EventHandler(this.btnBorrowed_Leave);
             // 
             // btnMain
             // 
-            this.btnMain.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnMain.BackColor = System.Drawing.Color.Navy;
             this.btnMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMain.FlatAppearance.BorderSize = 0;
             this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -124,12 +118,10 @@ namespace MyLibrary
             this.btnMain.Text = "Moje książki";
             this.btnMain.UseVisualStyleBackColor = false;
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
-            this.btnMain.Enter += new System.EventHandler(this.btnMain_Enter);
-            this.btnMain.Leave += new System.EventHandler(this.btnMain_Leave);
             // 
             // userPanel
             // 
-            this.userPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.userPanel.BackColor = System.Drawing.Color.MidnightBlue;
             this.userPanel.Controls.Add(this.logoutLabel);
             this.userPanel.Controls.Add(this.userNameLabel);
             this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -178,7 +170,7 @@ namespace MyLibrary
             // 
             // pnlFormLoader
             // 
-            this.pnlFormLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.pnlFormLoader.BackColor = System.Drawing.Color.MediumBlue;
             this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormLoader.Location = new System.Drawing.Point(186, 114);
             this.pnlFormLoader.Name = "pnlFormLoader";
@@ -189,7 +181,7 @@ namespace MyLibrary
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.Location = new System.Drawing.Point(445, 47);
+            this.lblTitle.Location = new System.Drawing.Point(449, 35);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(208, 38);
             this.lblTitle.TabIndex = 0;
@@ -200,7 +192,7 @@ namespace MyLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlFormLoader);

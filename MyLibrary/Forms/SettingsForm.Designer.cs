@@ -60,7 +60,7 @@ namespace MyLibrary.Forms
             this.btnBlackMode.Name = "btnBlackMode";
             this.btnBlackMode.Size = new System.Drawing.Size(196, 158);
             this.btnBlackMode.TabIndex = 2;
-            this.btnBlackMode.Text = "Czarny";
+            this.btnBlackMode.Text = "Szary";
             this.btnBlackMode.UseVisualStyleBackColor = true;
             this.btnBlackMode.Click += new System.EventHandler(this.btnBlackMode_Click);
             // 

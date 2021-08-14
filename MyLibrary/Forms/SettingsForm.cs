@@ -45,12 +45,12 @@ namespace MyLibrary.Forms
             setMode(1);
         }
 
-        private void setDarkMode()
+        private void setNormalMode()
         {
-            this.BackColor = Color.Black;
+            this.BackColor = Color.MediumBlue;
         }
 
-        private void setNormalMode()
+        private void setDarkMode()
         {
             this.BackColor = Color.FromArgb(100, 100, 100);
         }

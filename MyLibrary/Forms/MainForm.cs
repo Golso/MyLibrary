@@ -42,16 +42,6 @@ namespace MyLibrary
             changeMode(userState);
         }
 
-        private void btnMain_Enter(object sender, EventArgs e)
-        {
-            btnMain.BackColor = Color.FromArgb(39, 39, 58);
-        }
-
-        private void btnMain_Leave(object sender, EventArgs e)
-        {
-            btnMain.BackColor = Color.FromArgb(51, 51, 76);
-        }
-
         private void btnMain_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Moje książki";
@@ -60,16 +50,6 @@ namespace MyLibrary
             myBookForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(myBookForm);
             myBookForm.Show();
-        }
-
-        private void btnBorrowed_Enter(object sender, EventArgs e)
-        {
-            btnBorrowed.BackColor = Color.FromArgb(39, 39, 58);
-        }
-
-        private void btnBorrowed_Leave(object sender, EventArgs e)
-        {
-            btnBorrowed.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnBorrowed_Click(object sender, EventArgs e)
@@ -82,16 +62,6 @@ namespace MyLibrary
             borrowedForm.Show();
         }
 
-        private void btnWanted_Enter(object sender, EventArgs e)
-        {
-            btnWanted.BackColor = Color.FromArgb(39, 39, 58);
-        }
-
-        private void btnWanted_Leave(object sender, EventArgs e)
-        {
-            btnWanted.BackColor = Color.FromArgb(51, 51, 76);
-        }
-
         private void btnWanted_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Do kupienia";
@@ -100,16 +70,6 @@ namespace MyLibrary
             wantedForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(wantedForm);
             wantedForm.Show();
-        }
-
-        private void btnSettings_Enter(object sender, EventArgs e)
-        {
-            btnSettings.BackColor = Color.FromArgb(39, 39, 58);
-        }
-
-        private void btnSettings_Leave(object sender, EventArgs e)
-        {
-            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -133,24 +93,44 @@ namespace MyLibrary
             this.Hide();
         }
 
-        private void changeToDarkMode()
-        {
-            this.BackColor = Color.FromArgb(10,10,10);
-            this.pnlNavigation.BackColor = Color.FromArgb(0, 0, 0);
-            this.userPanel.BackColor = Color.FromArgb(0, 0, 0);
-
-            this.lblTitle.ForeColor = Color.FromArgb(255, 255, 255);
-            this.userNameLabel.ForeColor = Color.FromArgb(255, 255, 255);
-        }
-
         private void changeToNormalMode()
         {
-            this.BackColor = Color.FromArgb(51, 51, 76);
-            this.pnlNavigation.BackColor = Color.FromArgb(51, 51, 76);
-            this.userPanel.BackColor = Color.FromArgb(39, 39, 58);
+            BackColor = Color.Navy;
+            pnlNavigation.BackColor = Color.Navy;
+            userPanel.BackColor = Color.MidnightBlue;
 
-            this.lblTitle.ForeColor = Color.Black;
-            this.userNameLabel.ForeColor = Color.Black;
+            lblTitle.ForeColor = Color.Black;
+            userNameLabel.ForeColor = Color.Black;
+
+            btnBorrowed.BackColor = Color.Navy;
+            btnClose.BackColor = Color.Navy;
+            btnMain.BackColor = Color.Navy;
+            btnSettings.BackColor = Color.Navy;
+
+            btnMain.ForeColor = Color.Black;
+            btnBorrowed.ForeColor = Color.Black;
+            btnSettings.ForeColor = Color.Black;
+            btnWanted.ForeColor = Color.Black;
+        }
+
+        private void changeToDarkMode()
+        {
+            BackColor = Color.FromArgb(51, 51, 76);
+            pnlNavigation.BackColor = Color.FromArgb(51, 51, 76);
+            userPanel.BackColor = Color.FromArgb(39, 39, 58);
+
+            lblTitle.ForeColor = Color.Black;
+            userNameLabel.ForeColor = Color.Black;
+
+            btnBorrowed.BackColor = Color.FromArgb(51, 51, 76);
+            btnClose.BackColor = Color.FromArgb(51, 51, 76);
+            btnMain.BackColor = Color.FromArgb(51, 51, 76);
+            btnSettings.BackColor = Color.FromArgb(51, 51, 76);
+
+            btnMain.ForeColor = Color.DarkRed;
+            btnBorrowed.ForeColor = Color.DarkRed;
+            btnSettings.ForeColor = Color.DarkRed;
+            btnWanted.ForeColor = Color.DarkRed;
         }
 
         public void changeMode(int state)
