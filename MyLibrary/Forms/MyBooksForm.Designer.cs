@@ -77,7 +77,7 @@ namespace MyLibrary.Forms
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // dataGridViewMain
             // 
@@ -92,7 +92,7 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewMain.TabIndex = 7;
             this.dataGridViewMain.TabStop = false;
-            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
+            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMain_CellMouseClick);
             // 
             // btnUpdateBook
             // 
@@ -102,7 +102,7 @@ namespace MyLibrary.Forms
             this.btnUpdateBook.TabIndex = 4;
             this.btnUpdateBook.Text = "Edytuj";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
-            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            this.btnUpdateBook.Click += new System.EventHandler(this.BtnUpdateBook_Click);
             // 
             // btnBorrow
             // 
@@ -112,7 +112,7 @@ namespace MyLibrary.Forms
             this.btnBorrow.TabIndex = 3;
             this.btnBorrow.Text = "Pożycz";
             this.btnBorrow.UseVisualStyleBackColor = true;
-            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            this.btnBorrow.Click += new System.EventHandler(this.BtnBorrow_Click);
             // 
             // label2
             // 
@@ -146,7 +146,7 @@ namespace MyLibrary.Forms
             this.txtBoxTitleSearch.Size = new System.Drawing.Size(446, 22);
             this.txtBoxTitleSearch.TabIndex = 13;
             this.txtBoxTitleSearch.Text = "Szukaj po tytule...";
-            this.txtBoxTitleSearch.TextChanged += new System.EventHandler(this.txtBoxTitleSearch_TextChanged);
+            this.txtBoxTitleSearch.TextChanged += new System.EventHandler(this.TxtBoxTitleSearch_TextChanged);
             // 
             // MyBooksForm
             // 

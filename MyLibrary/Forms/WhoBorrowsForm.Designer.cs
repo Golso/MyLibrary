@@ -59,7 +59,7 @@ namespace MyLibrary.Forms
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // btnClose
             // 
@@ -69,7 +69,7 @@ namespace MyLibrary.Forms
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Anuluj";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // WhoBorrowsForm
             // 

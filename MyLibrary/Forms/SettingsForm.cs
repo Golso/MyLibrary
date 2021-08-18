@@ -7,8 +7,8 @@ namespace MyLibrary.Forms
 {
     public partial class SettingsForm : Form
     {
-        private int userID;
-        MainForm main;
+        private readonly int userID;
+        private readonly MainForm main;
         public SettingsForm(int userID, MainForm main)
         {
             this.userID = userID;
@@ -16,50 +16,50 @@ namespace MyLibrary.Forms
 
             InitializeComponent();
 
-            setMode(SqlDataAccess.getUserState(userID));
+            SetMode(SqlDataAccess.GetUserState(userID));
         }
 
-        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        private void BtnDeleteAccount_Click(object sender, EventArgs e)
         {
             DialogResult delete = MessageBox.Show("Czy na pewno chcesz usunąć konto?", "Na pewno?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (delete == DialogResult.Yes)
             {
-                SqlDataAccess.deleteUser(userID);
+                SqlDataAccess.DeleteUser(userID);
 
                 new LoginForm().Show();
                 main.Hide();
             }
         }
 
-        private void btnNormalMode_Click(object sender, EventArgs e)
+        private void BtnNormalMode_Click(object sender, EventArgs e)
         {
-            SqlDataAccess.changeAppState(userID, 0);
-            main.changeMode(0);
-            setMode(0);
+            SqlDataAccess.ChangeAppState(userID, 0);
+            main.ChangeMode(0);
+            SetMode(0);
         }
 
-        private void btnBlackMode_Click(object sender, EventArgs e)
+        private void BtnBlackMode_Click(object sender, EventArgs e)
         {
-            SqlDataAccess.changeAppState(userID, 1);
-            main.changeMode(1);
-            setMode(1);
+            SqlDataAccess.ChangeAppState(userID, 1);
+            main.ChangeMode(1);
+            SetMode(1);
         }
 
-        private void setNormalMode()
+        private void SetNormalMode()
         {
-            this.BackColor = Color.MediumBlue;
+            BackColor = Color.MediumBlue;
         }
 
-        private void setDarkMode()
+        private void SetDarkMode()
         {
-            this.BackColor = Color.FromArgb(100, 100, 100);
+            BackColor = Color.FromArgb(100, 100, 100);
         }
 
-        private void setMode(int state)
+        private void SetMode(int state)
         {
             if (state == 1)
-                setDarkMode();
-            else setNormalMode();
+                SetDarkMode();
+            else SetNormalMode();
         }
     }
 }

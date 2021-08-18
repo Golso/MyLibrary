@@ -12,12 +12,12 @@ namespace MyLibrary.Forms
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPass.Checked)
             {
@@ -31,10 +31,12 @@ namespace MyLibrary.Forms
             }
         }
         //Co w przypadku gdy login już taki istnieje ?
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
-            UserModel user = new UserModel();
-            user.Login = txtUsername.Text;
+            UserModel user = new UserModel
+            {
+                Login = txtUsername.Text
+            };
 
             if (txtPassword.Text == txtConPassword.Text)
             {
@@ -48,7 +50,7 @@ namespace MyLibrary.Forms
                 checkBoxShowPass.Checked = false;
 
                 new LoginForm().Show();
-                this.Hide();
+                Hide();
             }
             else
             {
@@ -57,7 +59,7 @@ namespace MyLibrary.Forms
 
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
             txtUsername.Text = "";
             txtPassword.Text = "";
@@ -65,17 +67,17 @@ namespace MyLibrary.Forms
             checkBoxShowPass.Checked = false;
         }
 
-        private void labelToLogin_Click(object sender, EventArgs e)
+        private void LabelToLogin_Click(object sender, EventArgs e)
         {
             new LoginForm().Show();
-            this.Hide();
+            Hide();
         }
 
-        private void txtConPassword_KeyDown(object sender, KeyEventArgs e)
+        private void TxtConPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnRegister_Click(this, new EventArgs());
+                BtnRegister_Click(this, new EventArgs());
             }
         }
     }

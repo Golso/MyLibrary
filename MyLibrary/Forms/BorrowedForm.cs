@@ -9,7 +9,7 @@ namespace MyLibrary.Forms
     public partial class BorrowedForm : Form
     {
         private int currentID = 0;
-        private int userID;
+        private readonly int userID;
 
         public BorrowedForm(int userID)
         {
@@ -17,7 +17,7 @@ namespace MyLibrary.Forms
 
             InitializeComponent();
 
-            setMode(SqlDataAccess.getUserState(userID));
+            SetMode(SqlDataAccess.GetUserState(userID));
 
             LoadBorrowed();
         }
@@ -30,13 +30,15 @@ namespace MyLibrary.Forms
             dataGridViewBorrowed.DataSource = ds.Tables[0];
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void BtnReturn_Click(object sender, EventArgs e)
         {
-            BookModel book = new BookModel();
-            book.Tytuł = titleText.Text;
-            book.Autor = autorText.Text;
-            book.DoKupienia = "Nie";
-            book.UserID = userID;
+            BookModel book = new BookModel
+            {
+                Tytuł = titleText.Text,
+                Autor = autorText.Text,
+                DoKupienia = "Nie",
+                UserID = userID
+            };
 
             SqlDataAccess.SaveBook(book);
             SqlDataAccess.DeleteBorrowedBook(currentID);
@@ -49,7 +51,7 @@ namespace MyLibrary.Forms
             LoadBorrowed();
         }
 
-        private void dataGridViewBorrowed_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewBorrowed_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -62,23 +64,23 @@ namespace MyLibrary.Forms
             }
         }
 
-        private void setNormalMode()
+        private void SetNormalMode()
         {
-            this.BackColor = Color.MediumBlue;
+            BackColor = Color.MediumBlue;
         }
 
-        private void setDarkMode()
+        private void SetDarkMode()
         {
-            this.BackColor = Color.FromArgb(100, 100, 100);
+            BackColor = Color.FromArgb(100, 100, 100);
         }
 
-        private void setMode(int state)
+        private void SetMode(int state)
         {
             if (state == 1)
             {
-                setDarkMode();
+                SetDarkMode();
             }
-            else setNormalMode();
+            else SetNormalMode();
         }
     }
 }

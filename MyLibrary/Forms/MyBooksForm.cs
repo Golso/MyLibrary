@@ -9,14 +9,14 @@ namespace MyLibrary.Forms
     public partial class MyBooksForm : Form
     {
         private int currentID = 0;
-        private int userID;
+        private readonly int userID;
         public MyBooksForm(int userID)
         {
             this.userID = userID;
 
             InitializeComponent();
 
-            setMode(SqlDataAccess.getUserState(userID));
+            SetMode(SqlDataAccess.GetUserState(userID));
 
             LoadBooksList();
         }
@@ -37,12 +37,13 @@ namespace MyLibrary.Forms
         {
             if (titleText.Text != "" && autorText.Text != "")
             {
-                BookModel book = new BookModel();
-
-                book.Tytuł = titleText.Text;
-                book.Autor = autorText.Text;
-                book.DoKupienia = "Nie";
-                book.UserID = userID;
+                BookModel book = new BookModel
+                {
+                    Tytuł = titleText.Text,
+                    Autor = autorText.Text,
+                    DoKupienia = "Nie",
+                    UserID = userID
+                };
 
                 SqlDataAccess.SaveBook(book);
 
@@ -53,7 +54,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -71,7 +72,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void dataGridViewMain_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewMain_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -83,7 +84,7 @@ namespace MyLibrary.Forms
             }
         }
 
-        private void btnUpdateBook_Click(object sender, EventArgs e)
+        private void BtnUpdateBook_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && currentID != 0)
             {
@@ -96,15 +97,16 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void btnBorrow_Click(object sender, EventArgs e)
+        private void BtnBorrow_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && currentID != 0)
             {
-                BorrowedBookModel book = new BorrowedBookModel();
-                
-                book.Tytuł = titleText.Text;
-                book.Autor = autorText.Text;
-                book.UserID = userID;
+                BorrowedBookModel book = new BorrowedBookModel
+                {
+                    Tytuł = titleText.Text,
+                    Autor = autorText.Text,
+                    UserID = userID
+                };
 
                 new WhoBorrowsForm(book, currentID).Show();
 
@@ -115,7 +117,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void txtBoxTitleSearch_TextChanged(object sender, EventArgs e)
+        private void TxtBoxTitleSearch_TextChanged(object sender, EventArgs e)
         {
             DataSet ds = SqlDataAccess.SearchBook(userID, txtBoxTitleSearch.Text);
 
@@ -123,23 +125,23 @@ namespace MyLibrary.Forms
             dataGridViewMain.DataSource = ds.Tables[0];
         }
 
-        private void setNormalMode()
+        private void SetNormalMode()
         {
-            this.BackColor = Color.MediumBlue;
+            BackColor = Color.MediumBlue;
         }
 
         private void setDarkMode()
         {
-            this.BackColor = Color.FromArgb(100, 100, 100);
+            BackColor = Color.FromArgb(100, 100, 100);
         }
 
-        private void setMode(int state)
+        private void SetMode(int state)
         {
             if (state == 1)
             {
                 setDarkMode();
             }
-            else setNormalMode();
+            else SetNormalMode();
         }
     }
 }

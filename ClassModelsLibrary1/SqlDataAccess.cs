@@ -16,7 +16,7 @@ namespace ClassModelsLibrary1
             }
         }
 
-        public static void deleteUser(int userID)
+        public static void DeleteUser(int userID)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -24,7 +24,7 @@ namespace ClassModelsLibrary1
             }
         }
         
-        public static bool loginPasswordExists(string userName, string password)
+        public static bool LoginPasswordExists(string userName, string password)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -36,7 +36,7 @@ namespace ClassModelsLibrary1
                 return ds.Tables[0].Rows.Count==1;
             }
         }
-        public static int getUserId(string userName, string password)
+        public static int GetUserId(string userName, string password)
         {
             int userID = 0;
 
@@ -53,7 +53,7 @@ namespace ClassModelsLibrary1
             return userID;
         }
 
-        public static string getUserName(int userID)
+        public static string GetUserName(int userID)
         {
             string userName = "";
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -68,7 +68,7 @@ namespace ClassModelsLibrary1
             return userName;
         }
 
-        public static int getUserState(int userID)
+        public static int GetUserState(int userID)
         {
             int userState = 0;
 
@@ -85,7 +85,7 @@ namespace ClassModelsLibrary1
             return userState;
         }
 
-        public static void changeAppState(int userID, int state)
+        public static void ChangeAppState(int userID, int state)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {

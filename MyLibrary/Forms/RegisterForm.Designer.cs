@@ -105,7 +105,7 @@ namespace MyLibrary.Forms
             this.txtConPassword.PasswordChar = '•';
             this.txtConPassword.Size = new System.Drawing.Size(216, 27);
             this.txtConPassword.TabIndex = 6;
-            this.txtConPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConPassword_KeyDown);
+            this.txtConPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtConPassword_KeyDown);
             // 
             // label4
             // 
@@ -128,7 +128,7 @@ namespace MyLibrary.Forms
             this.checkBoxShowPass.TabIndex = 7;
             this.checkBoxShowPass.Text = "Pokaż hasło";
             this.checkBoxShowPass.UseVisualStyleBackColor = true;
-            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.CheckBoxShowPass_CheckedChanged);
             // 
             // btnRegister
             // 
@@ -144,7 +144,7 @@ namespace MyLibrary.Forms
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "ZAJERESTUJ SIĘ";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // btnClear
             // 
@@ -159,7 +159,7 @@ namespace MyLibrary.Forms
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "WYCZYŚĆ";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // label5
             // 
@@ -181,7 +181,7 @@ namespace MyLibrary.Forms
             this.labelToLogin.Size = new System.Drawing.Size(166, 23);
             this.labelToLogin.TabIndex = 11;
             this.labelToLogin.Text = "Wróć do logowania";
-            this.labelToLogin.Click += new System.EventHandler(this.labelToLogin_Click);
+            this.labelToLogin.Click += new System.EventHandler(this.LabelToLogin_Click);
             // 
             // btnClose
             // 
@@ -194,7 +194,7 @@ namespace MyLibrary.Forms
             this.btnClose.TabIndex = 25;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // RegisterForm
             // 

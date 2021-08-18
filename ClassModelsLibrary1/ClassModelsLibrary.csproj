@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorModel.cs" />
     <Compile Include="BookModel.cs" />
     <Compile Include="BorrowedBookModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

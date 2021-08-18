@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -22,78 +22,78 @@ namespace MyLibrary
               int nHeightEllipse
           );
 
-        private int userID;
-        private int userState;
+        private readonly int userID;
+        private readonly int userState;
 
         public MainForm(int userID)
         {
             this.userID = userID;
-            userState = SqlDataAccess.getUserState(userID);
+            userState = SqlDataAccess.GetUserState(userID);
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
-            this.pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Clear();
             MyBooksForm myBookForm = new MyBooksForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             myBookForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(myBookForm);
-            this.userNameLabel.Text = SqlDataAccess.getUserName(this.userID);
+            pnlFormLoader.Controls.Add(myBookForm);
+            userNameLabel.Text = SqlDataAccess.GetUserName(this.userID);
             myBookForm.Show();
 
-            changeMode(userState);
+            ChangeMode(userState);
         }
 
-        private void btnMain_Click(object sender, EventArgs e)
+        private void BtnMain_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Moje książki";
-            this.pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Clear();
             MyBooksForm myBookForm = new MyBooksForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             myBookForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(myBookForm);
+            pnlFormLoader.Controls.Add(myBookForm);
             myBookForm.Show();
         }
 
-        private void btnBorrowed_Click(object sender, EventArgs e)
+        private void BtnBorrowed_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Pożyczone";
-            this.pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Clear();
             BorrowedForm borrowedForm = new BorrowedForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             borrowedForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(borrowedForm);
+            pnlFormLoader.Controls.Add(borrowedForm);
             borrowedForm.Show();
         }
 
-        private void btnWanted_Click(object sender, EventArgs e)
+        private void BtnWanted_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Do kupienia";
-            this.pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Clear();
             WantedForm wantedForm = new WantedForm(userID) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             wantedForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(wantedForm);
+            pnlFormLoader.Controls.Add(wantedForm);
             wantedForm.Show();
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void BtnSettings_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Ustawienia";
-            this.pnlFormLoader.Controls.Clear();
+            pnlFormLoader.Controls.Clear();
             SettingsForm settingsForm = new SettingsForm(userID, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             settingsForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(settingsForm);
+            pnlFormLoader.Controls.Add(settingsForm);
             settingsForm.Show();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void logoutLabel_Click(object sender, EventArgs e)
+        private void LogoutLabel_Click(object sender, EventArgs e)
         {
             new LoginForm().Show();
-            this.Hide();
+            Hide();
         }
 
-        private void changeToNormalMode()
+        private void ChangeToNormalMode()
         {
             BackColor = Color.Navy;
             pnlNavigation.BackColor = Color.Navy;
@@ -113,7 +113,7 @@ namespace MyLibrary
             btnWanted.ForeColor = Color.Black;
         }
 
-        private void changeToDarkMode()
+        private void ChangeToDarkMode()
         {
             BackColor = Color.FromArgb(51, 51, 76);
             pnlNavigation.BackColor = Color.FromArgb(51, 51, 76);
@@ -133,15 +133,15 @@ namespace MyLibrary
             btnWanted.ForeColor = Color.DarkRed;
         }
 
-        public void changeMode(int state)
+        public void ChangeMode(int state)
         {
             if (state == 1)
             {
-                changeToDarkMode();
+                ChangeToDarkMode();
             }
             else
             {
-                changeToNormalMode();
+                ChangeToNormalMode();
             }
         }
     }

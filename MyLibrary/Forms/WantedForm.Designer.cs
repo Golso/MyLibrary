@@ -65,7 +65,7 @@ namespace MyLibrary.Forms
             this.btnBought.TabIndex = 3;
             this.btnBought.Text = "Kupiona";
             this.btnBought.UseVisualStyleBackColor = true;
-            this.btnBought.Click += new System.EventHandler(this.btnBought_Click);
+            this.btnBought.Click += new System.EventHandler(this.BtnBought_Click);
             // 
             // btnUpdateBook
             // 
@@ -75,7 +75,7 @@ namespace MyLibrary.Forms
             this.btnUpdateBook.TabIndex = 4;
             this.btnUpdateBook.Text = "Edytuj";
             this.btnUpdateBook.UseVisualStyleBackColor = true;
-            this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
+            this.btnUpdateBook.Click += new System.EventHandler(this.BtnUpdateBook_Click);
             // 
             // dataGridViewMain
             // 
@@ -90,7 +90,7 @@ namespace MyLibrary.Forms
             this.dataGridViewMain.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewMain.TabIndex = 16;
             this.dataGridViewMain.TabStop = false;
-            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMain_CellMouseClick);
+            this.dataGridViewMain.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMain_CellMouseClick);
             // 
             // btnDelete
             // 
@@ -100,7 +100,7 @@ namespace MyLibrary.Forms
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // titleText
             // 
@@ -126,7 +126,7 @@ namespace MyLibrary.Forms
             this.btnAddBook.TabIndex = 2;
             this.btnAddBook.Text = "Dodaj";
             this.btnAddBook.UseVisualStyleBackColor = true;
-            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // WantedForm
             // 

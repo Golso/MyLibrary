@@ -11,19 +11,19 @@ namespace MyLibrary.Forms
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             string userName = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if(SqlDataAccess.loginPasswordExists(userName, password))
+            if(SqlDataAccess.LoginPasswordExists(userName, password))
             {
-                int userID = SqlDataAccess.getUserId(userName, password);
+                int userID = SqlDataAccess.GetUserId(userName, password);
                 new MainForm(userID).Show();
                 this.Hide();
             }
@@ -33,21 +33,20 @@ namespace MyLibrary.Forms
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
             txtUsername.Text = "";
             txtPassword.Text = "";
             checkBoxShowPass.Checked = false;
         }
 
-        private void labelCreate_Click(object sender, EventArgs e)
+        private void LabelCreate_Click(object sender, EventArgs e)
         {
             new RegisterForm().Show();
-            this.Hide();
-            //this.Close();
+            Hide();
         }
 
-        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPass.Checked)
             {
@@ -59,11 +58,11 @@ namespace MyLibrary.Forms
             }
         }
 
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnLogin_Click(this, new EventArgs());
+                BtnLogin_Click(this, new EventArgs());
             }
         }
     }

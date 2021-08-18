@@ -52,7 +52,7 @@ namespace MyLibrary.Forms
             this.labelCreate.Size = new System.Drawing.Size(120, 23);
             this.labelCreate.TabIndex = 23;
             this.labelCreate.Text = "Utwórz konto";
-            this.labelCreate.Click += new System.EventHandler(this.labelCreate_Click);
+            this.labelCreate.Click += new System.EventHandler(this.LabelCreate_Click);
             // 
             // label5
             // 
@@ -76,7 +76,7 @@ namespace MyLibrary.Forms
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "WYCZYŚĆ";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // btnLogin
             // 
@@ -91,7 +91,7 @@ namespace MyLibrary.Forms
             this.btnLogin.TabIndex = 20;
             this.btnLogin.Text = "ZALOGUJ";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // checkBoxShowPass
             // 
@@ -105,7 +105,7 @@ namespace MyLibrary.Forms
             this.checkBoxShowPass.TabIndex = 19;
             this.checkBoxShowPass.Text = "Pokaż hasło";
             this.checkBoxShowPass.UseVisualStyleBackColor = true;
-            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.CheckBoxShowPass_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -117,7 +117,7 @@ namespace MyLibrary.Forms
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(216, 27);
             this.txtPassword.TabIndex = 16;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyDown);
             // 
             // label3
             // 
@@ -170,7 +170,7 @@ namespace MyLibrary.Forms
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // LoginForm
             // 

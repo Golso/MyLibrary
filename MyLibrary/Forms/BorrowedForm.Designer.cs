@@ -53,7 +53,7 @@ namespace MyLibrary.Forms
             this.dataGridViewBorrowed.Size = new System.Drawing.Size(449, 301);
             this.dataGridViewBorrowed.TabIndex = 0;
             this.dataGridViewBorrowed.TabStop = false;
-            this.dataGridViewBorrowed.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewBorrowed_CellMouseClick);
+            this.dataGridViewBorrowed.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewBorrowed_CellMouseClick);
             // 
             // btnReturn
             // 
@@ -63,7 +63,7 @@ namespace MyLibrary.Forms
             this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Zwrócone";
             this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
             // label1
             // 

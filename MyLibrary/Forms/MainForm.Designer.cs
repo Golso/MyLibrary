@@ -71,7 +71,7 @@ namespace MyLibrary
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Ustawienia";
             this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
             // 
             // btnWanted
             // 
@@ -86,7 +86,7 @@ namespace MyLibrary
             this.btnWanted.TabIndex = 4;
             this.btnWanted.Text = "Do kupienia";
             this.btnWanted.UseVisualStyleBackColor = true;
-            this.btnWanted.Click += new System.EventHandler(this.btnWanted_Click);
+            this.btnWanted.Click += new System.EventHandler(this.BtnWanted_Click);
             // 
             // btnBorrowed
             // 
@@ -101,7 +101,7 @@ namespace MyLibrary
             this.btnBorrowed.TabIndex = 3;
             this.btnBorrowed.Text = "Pożyczone";
             this.btnBorrowed.UseVisualStyleBackColor = true;
-            this.btnBorrowed.Click += new System.EventHandler(this.btnBorrowed_Click);
+            this.btnBorrowed.Click += new System.EventHandler(this.BtnBorrowed_Click);
             // 
             // btnMain
             // 
@@ -117,7 +117,7 @@ namespace MyLibrary
             this.btnMain.TabIndex = 2;
             this.btnMain.Text = "Moje książki";
             this.btnMain.UseVisualStyleBackColor = false;
-            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
+            this.btnMain.Click += new System.EventHandler(this.BtnMain_Click);
             // 
             // userPanel
             // 
@@ -141,7 +141,7 @@ namespace MyLibrary
             this.logoutLabel.Size = new System.Drawing.Size(75, 20);
             this.logoutLabel.TabIndex = 2;
             this.logoutLabel.Text = "Wyloguj";
-            this.logoutLabel.Click += new System.EventHandler(this.logoutLabel_Click);
+            this.logoutLabel.Click += new System.EventHandler(this.LogoutLabel_Click);
             // 
             // userNameLabel
             // 
@@ -166,7 +166,7 @@ namespace MyLibrary
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // pnlFormLoader
             // 

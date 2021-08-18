@@ -9,14 +9,14 @@ namespace MyLibrary.Forms
     public partial class WantedForm : Form
     {
         private int currentID = 0;
-        private int userID;
+        private readonly int userID;
         public WantedForm(int userID)
         {
             this.userID = userID;
 
             InitializeComponent();
 
-            setMode(SqlDataAccess.getUserState(userID));
+            SetMode(SqlDataAccess.GetUserState(userID));
 
             LoadBooksList();
         }
@@ -30,16 +30,17 @@ namespace MyLibrary.Forms
 
         }
 
-        private void btnAddBook_Click(object sender, EventArgs e)
+        private void BtnAddBook_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && autorText.Text != "")
             {
-                BookModel book = new BookModel();
-
-                book.Tytuł = titleText.Text;
-                book.Autor = autorText.Text;
-                book.DoKupienia = "Tak";
-                book.UserID = userID;
+                BookModel book = new BookModel
+                {
+                    Tytuł = titleText.Text,
+                    Autor = autorText.Text,
+                    DoKupienia = "Tak",
+                    UserID = userID
+                };
 
                 SqlDataAccess.SaveBook(book);
 
@@ -50,7 +51,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void btnBought_Click(object sender, EventArgs e)
+        private void BtnBought_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && currentID != 0)
             {
@@ -63,7 +64,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void btnUpdateBook_Click(object sender, EventArgs e)
+        private void BtnUpdateBook_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && currentID != 0)
             {
@@ -76,8 +77,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
     
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void dataGridViewMain_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewMain_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -107,23 +107,23 @@ namespace MyLibrary.Forms
             }
         }
 
-        private void setNormalMode()
+        private void SetNormalMode()
         {
-            this.BackColor = Color.MediumBlue;
+            BackColor = Color.MediumBlue;
         }
 
-        private void setDarkMode()
+        private void SetDarkMode()
         {
-            this.BackColor = Color.FromArgb(100, 100, 100);
+            BackColor = Color.FromArgb(100, 100, 100);
         }
 
-        private void setMode(int state)
+        private void SetMode(int state)
         {
             if (state == 1)
             {
-                setDarkMode();
+                SetDarkMode();
             }
-            else setNormalMode();
+            else SetNormalMode();
         }
     }
 }
