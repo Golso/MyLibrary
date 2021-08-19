@@ -30,7 +30,7 @@ namespace MyLibrary.Forms
                 txtConPassword.PasswordChar = '•';
             }
         }
-        //Co w przypadku gdy login już taki istnieje ?
+
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel
@@ -40,23 +40,32 @@ namespace MyLibrary.Forms
 
             if (txtPassword.Text == txtConPassword.Text)
             {
-                user.Password = txtPassword.Text;
-                user.Stan = 0;
-                SqlDataAccess.AddUser(user);
+                try
+                {
+                    user.Password = txtPassword.Text;
+                    user.Stan = 0;
+                    SqlDataAccess.AddUser(user);
 
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtConPassword.Text = "";
-                checkBoxShowPass.Checked = false;
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    txtConPassword.Text = "";
+                    checkBoxShowPass.Checked = false;
 
-                new LoginForm().Show();
-                Hide();
+                    new LoginForm().Show();
+                    Hide();
+                }
+                catch (Exception)
+                {
+                    if (SqlDataAccess.LoginExists(user.Login))
+                    {
+                        MessageBox.Show("Konto o takim loginie już istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Hasła do siebie nie pasują.","Błąd",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -79,6 +88,11 @@ namespace MyLibrary.Forms
             {
                 BtnRegister_Click(this, new EventArgs());
             }
+        }
+
+        private void BtnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

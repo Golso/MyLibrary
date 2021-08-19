@@ -23,7 +23,20 @@ namespace ClassModelsLibrary1
                 cnn.Execute($"DELETE FROM User WHERE UserID = {userID}");
             }
         }
-        
+
+        public static bool LoginExists(string userName)
+        {
+            using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter($"SELECT * FROM User WHERE Login='{userName}'", cnn);
+                DataSet ds = new DataSet();
+
+                dataAdapter.Fill(ds, "Info");
+
+                return ds.Tables[0].Rows.Count == 1;
+            }
+        }
+
         public static bool LoginPasswordExists(string userName, string password)
         {
             using (SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -36,6 +49,7 @@ namespace ClassModelsLibrary1
                 return ds.Tables[0].Rows.Count==1;
             }
         }
+
         public static int GetUserId(string userName, string password)
         {
             int userID = 0;

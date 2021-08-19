@@ -10,6 +10,7 @@ namespace MyLibrary.Forms
     {
         private int currentID = 0;
         private readonly int userID;
+
         public MyBooksForm(int userID)
         {
             this.userID = userID;
@@ -21,7 +22,7 @@ namespace MyLibrary.Forms
             LoadBooksList();
         }
 
-        private void LoadBooksList()
+        public void LoadBooksList()
         {
             txtBoxTitleSearch.Text = "Szukaj po tytule...";
 
@@ -33,7 +34,7 @@ namespace MyLibrary.Forms
             lblBooksAmount.Text = "Ilość posiadanych książek: " + SqlDataAccess.GetAmountOfBooks(userID);
         }
 
-        private void btnAddBook_Click(object sender, EventArgs e)
+        private void BtnAddBook_Click(object sender, EventArgs e)
         {
             if (titleText.Text != "" && autorText.Text != "")
             {
@@ -94,6 +95,7 @@ namespace MyLibrary.Forms
                 titleText.Text = "";
                 autorText.Text = "";
             }
+
             LoadBooksList();
         }
 
@@ -108,12 +110,13 @@ namespace MyLibrary.Forms
                     UserID = userID
                 };
 
-                new WhoBorrowsForm(book, currentID).Show();
+                new WhoBorrowsForm(book, currentID, this).Show();
 
                 currentID = 0;
                 titleText.Text = "";
                 autorText.Text = "";
             }
+
             LoadBooksList();
         }
 
@@ -130,7 +133,7 @@ namespace MyLibrary.Forms
             BackColor = Color.MediumBlue;
         }
 
-        private void setDarkMode()
+        private void SetDarkMode()
         {
             BackColor = Color.FromArgb(100, 100, 100);
         }
@@ -139,7 +142,7 @@ namespace MyLibrary.Forms
         {
             if (state == 1)
             {
-                setDarkMode();
+                SetDarkMode();
             }
             else SetNormalMode();
         }

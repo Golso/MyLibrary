@@ -27,7 +27,6 @@ namespace MyLibrary.Forms
 
             dataGridViewMain.DataSource = null;
             dataGridViewMain.DataSource = ds.Tables[0];
-
         }
 
         private void BtnAddBook_Click(object sender, EventArgs e)
@@ -61,6 +60,7 @@ namespace MyLibrary.Forms
                 titleText.Text = "";
                 autorText.Text = "";
             }
+
             LoadBooksList();
         }
 
@@ -74,6 +74,7 @@ namespace MyLibrary.Forms
                 titleText.Text = "";
                 autorText.Text = "";
             }
+
             LoadBooksList();
         }
     

@@ -25,11 +25,11 @@ namespace MyLibrary.Forms
             {
                 int userID = SqlDataAccess.GetUserId(userName, password);
                 new MainForm(userID).Show();
-                this.Hide();
+                Hide();
             }
             else
             {
-                //msg o błędnych danych lub nie istniejącym koncie
+                MessageBox.Show("Błędny login lub hasło.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -64,6 +64,11 @@ namespace MyLibrary.Forms
             {
                 BtnLogin_Click(this, new EventArgs());
             }
+        }
+
+        private void BtnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

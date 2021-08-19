@@ -51,7 +51,7 @@ namespace MyLibrary.Forms
             this.btnAddBook.TabIndex = 2;
             this.btnAddBook.Text = "Dodaj";
             this.btnAddBook.UseVisualStyleBackColor = true;
-            this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // label1
             // 

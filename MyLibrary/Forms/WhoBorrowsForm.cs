@@ -8,11 +8,13 @@ namespace MyLibrary.Forms
     {
         private readonly BorrowedBookModel book;
         private readonly int currentID;
+        private readonly MyBooksForm form;
 
-        public WhoBorrowsForm(BorrowedBookModel book, int currentID)
+        public WhoBorrowsForm(BorrowedBookModel book, int currentID, MyBooksForm form)
         {
             this.book = book;
             this.currentID = currentID;
+            this.form = form;
 
             InitializeComponent();
         }
@@ -22,6 +24,8 @@ namespace MyLibrary.Forms
             book.Komu = txtBoxWho.Text;
             SqlDataAccess.SaveBorrowedBook(book);
             SqlDataAccess.DeleteBook(currentID);
+
+            form.LoadBooksList();
 
             Hide();
         }

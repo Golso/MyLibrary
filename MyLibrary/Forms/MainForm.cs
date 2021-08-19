@@ -9,7 +9,6 @@ namespace MyLibrary
 {
     public partial class MainForm : Form
     {
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -143,6 +142,11 @@ namespace MyLibrary
             {
                 ChangeToNormalMode();
             }
+        }
+
+        private void Minimaliz_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

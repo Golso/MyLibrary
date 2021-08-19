@@ -40,6 +40,7 @@ namespace MyLibrary
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnMinimaliz = new System.Windows.Forms.Button();
             this.pnlNavigation.SuspendLayout();
             this.userPanel.SuspendLayout();
             this.SuspendLayout();
@@ -188,12 +189,26 @@ namespace MyLibrary
             this.lblTitle.Text = "Moje książki";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnMinimaliz
+            // 
+            this.btnMinimaliz.FlatAppearance.BorderSize = 0;
+            this.btnMinimaliz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimaliz.ForeColor = System.Drawing.Color.White;
+            this.btnMinimaliz.Location = new System.Drawing.Point(883, 12);
+            this.btnMinimaliz.Name = "btnMinimaliz";
+            this.btnMinimaliz.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimaliz.TabIndex = 3;
+            this.btnMinimaliz.Text = "-";
+            this.btnMinimaliz.UseVisualStyleBackColor = true;
+            this.btnMinimaliz.Click += new System.EventHandler(this.Minimaliz_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.btnMinimaliz);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.btnClose);
@@ -223,6 +238,7 @@ namespace MyLibrary
         private System.Windows.Forms.Panel pnlFormLoader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label logoutLabel;
+        private System.Windows.Forms.Button btnMinimaliz;
     }
 }
 
